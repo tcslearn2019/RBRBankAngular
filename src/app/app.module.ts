@@ -7,6 +7,13 @@ import { InvestmentComponent } from './components/investment/investment.componen
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IndexComponent } from './components/index/index.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  { path: '', component: UserRegistrationComponent},
+  { path: 'index', component: IndexComponent}
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +25,8 @@ import { IndexComponent } from './components/index/index.component';
     IndexComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
