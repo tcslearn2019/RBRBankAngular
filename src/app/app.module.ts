@@ -6,6 +6,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { InvestmentComponent } from './components/investment/investment.component';
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
+import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TransferComponent } from './components/transfer/transfer.component';
     UserRegistrationComponent,
     InvestmentComponent,
     LoanComponent,
-    TransferComponent
+    TransferComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule
