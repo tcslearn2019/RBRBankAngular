@@ -29,7 +29,7 @@ import {MatInputModule} from '@angular/material/input';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatTabsModule,
     MatInputModule
