@@ -7,6 +7,9 @@ import { InvestmentComponent } from './components/investment/investment.componen
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IndexComponent } from './components/index/index.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { IndexComponent } from './components/index/index.component';
     IndexComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
