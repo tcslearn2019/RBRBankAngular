@@ -14,6 +14,9 @@ const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
   { path: 'index', component: IndexComponent}
 ];
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
