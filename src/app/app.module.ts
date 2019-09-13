@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { UserService } from './services/users/user.service';
 
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
@@ -9,22 +9,27 @@ import { InvestmentComponent } from './components/investment/investment.componen
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IndexComponent } from './components/index/index.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
-import {MatCheckboxModule,MatProgressSpinnerModule,MatCardModule, MatIconModule} from '@angular/material';
+import {MatCheckboxModule, MatProgressSpinnerModule, MatCardModule, MatIconModule} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
   { path: 'index', component: IndexComponent}
 ];
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
+
 import {NgxMaskModule, IConfig} from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -53,7 +58,7 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatIconModule,
     CommonModule,
-    FormsModule,    
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatTabsModule,
@@ -65,9 +70,8 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule { }
 
