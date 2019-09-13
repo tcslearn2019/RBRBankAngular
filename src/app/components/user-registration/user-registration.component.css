@@ -1,3 +1,10 @@
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: center;
+  background-color: #B11521 ;
+  color: white;
+}
+
 .example-form {
     position: relative;
      margin: auto;
@@ -6,12 +13,29 @@
     max-width: 500px;
     width: 100%;
   }
-  
+
   .example-full-width {
-    
+
     width: 100%;
   }
 
   h3{
       text-align: center;
+      font-size: 2em;
+      padding-top: none;
+      position: inherit;
   }
+
+  .paddin-user{
+    padding-top: 20px;
+  }
+  .center{
+    align-items: center;
+    text-align: center;
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+  width: 15%;
+}
