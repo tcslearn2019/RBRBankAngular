@@ -28,15 +28,11 @@ const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
   { path: 'index', component: IndexComponent}
 ];
-<<<<<<< HEAD
-=======
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
+
 import {NgxMaskModule, IConfig} from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
->>>>>>> 52e74dd70414213071fbf33ef1ecdb1516c9e1b1
 
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -61,27 +57,19 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatIconModule,
     CommonModule,
-    FormsModule,    
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatTabsModule,
     MatInputModule,
-<<<<<<< HEAD
-    HttpClientModule
-  ],
-  providers: [UserService],
-  bootstrap: [AppComponent]
-=======
     MatToolbarModule,
     MatButtonModule,
     NgxMaskModule.forRoot(options),
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
-  
->>>>>>> 52e74dd70414213071fbf33ef1ecdb1516c9e1b1
 })
 export class AppModule { }
 
