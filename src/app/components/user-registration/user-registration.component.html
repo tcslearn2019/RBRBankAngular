@@ -7,11 +7,11 @@
         <div class="center">
             <form class="example-form paddin-user">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="CPF" />
+                    <input matInput placeholder="CPF" mask='000.000.000-00' />
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Senha" />
+                    <input type="password" matInput placeholder="Senha" />
                 </mat-form-field>
             </form>
 
@@ -21,29 +21,32 @@
             <p>Ainda não é cadastrado? <a href="#cadastrar">Cadastre-se</a></p>
         </div>
     </mat-tab>
-    <mat-tab label="Cadastrar"id="cadastrar">
+    <mat-tab label="Cadastrar" id="cadastrar">
         <div class="center">
             <form class="example-form paddin-user">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nome Completo" />
+                    <input type="text" matInput placeholder="Nome Completo" [formControl]="nomeFormControl"
+                    [errorStateMatcher]="matcher" />
+                    <mat-error *ngIf="nomeFormControl.hasError('required')">
+                            Digite seu nome
+                          </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="CPF" />
+                    <input matInput placeholder="CPF" mask='000.000.000-00' />
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Senha" />
+                    <input type="password" matInput placeholder="Senha" />
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Confirme sua senha" />
+                    <input type="password" matInput placeholder="Confirme sua senha" />
                 </mat-form-field>
             </form>
             <div class="example-button-row">
-                    <button mat-flat-button color="primary">Cadastrar</button>
-                </div>
+                <button mat-flat-button color="primary">Cadastrar</button>
+            </div>
         </div>
     </mat-tab>
-
 </mat-tab-group>
