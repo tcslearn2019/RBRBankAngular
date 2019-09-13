@@ -13,7 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
-import {MatCheckboxModule,MatInputModule,MatProgressSpinnerModule,MatCardModule, MatIconModule} from '@angular/material';
+import {MatCheckboxModule,MatProgressSpinnerModule,MatCardModule, MatIconModule} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -22,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'index', component: IndexComponent}
 ];
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
 
 import { FormsModule } from '@angular/forms';
 @NgModule({
