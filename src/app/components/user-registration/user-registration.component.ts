@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-user-registration',
@@ -12,4 +12,8 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  cadastrar(){
+
+  }
 }

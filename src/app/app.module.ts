@@ -14,7 +14,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import {MatCheckboxModule,MatInputModule,MatProgressSpinnerModule,MatCardModule, MatIconModule} from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const appRoutes: Routes = [
+  { path: '', component: UserRegistrationComponent},
+  { path: 'index', component: IndexComponent}
+];
 
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -39,8 +45,13 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatIconModule,
     CommonModule,
-    FormsModule
-    
+    FormsModule,    
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
