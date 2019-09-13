@@ -17,6 +17,8 @@ const appRoutes: Routes = [
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {MatInputModule} from '@angular/material/input';
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatTabsModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
