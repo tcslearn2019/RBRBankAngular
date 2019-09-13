@@ -17,7 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import {MatCheckboxModule,MatProgressSpinnerModule,MatCardModule, MatIconModule} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
@@ -62,7 +62,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     NgxMaskModule.forRoot(options),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],
