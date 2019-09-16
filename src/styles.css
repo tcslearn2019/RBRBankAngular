@@ -9,3 +9,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 125px;
     background-color: #B11521 ;
 }
+
+.mat-list-base .mat-list-item .mat-list-item-content{
+    padding: 0 !important;
+}

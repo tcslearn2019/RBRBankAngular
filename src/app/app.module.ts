@@ -27,7 +27,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
   { path: 'index', component: IndexComponent},
-  { path: 'userdetails', component: UserdetailsComponent}
+  { path: 'userdetails', component: UserdetailsComponent},  
+  { path: 'loan', component: LoanComponent}
 ];
 
 import {NgxMaskModule, IConfig} from 'ngx-mask';
@@ -47,7 +48,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     TransferComponent,
     IndexComponent,
     UserdetailsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LoanComponent
   ],
   imports: [
     BrowserModule,

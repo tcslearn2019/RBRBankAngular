@@ -1,7 +1,7 @@
 <body>    
 <app-toolbar></app-toolbar>
-<hr class="hrTop"><div class="imagens">
-  <mat-card class="example-card" (click)="teste()">               
+<hr class="hrTop"><div class="imagens">  
+  <mat-card class="example-card" (click)="detalhesConta()">               
       <mat-card-header>      
         <div mat-card-avatar class="example-header-image"></div>        
           <mat-card-title class="titleCorrente">Detalhes da Conta</mat-card-title>    
@@ -16,7 +16,7 @@
         <button mat-button class="abraConta">Abra sua conta</button>  
       </mat-card-actions>
     </mat-card>       
-    <mat-card class="example-card2">
+    <mat-card class="example-card2" (click)="emprestimo()">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title class="titleCorrente">Emprestimo</mat-card-title>    

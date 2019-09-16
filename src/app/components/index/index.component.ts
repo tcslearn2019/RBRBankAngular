@@ -13,8 +13,12 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
   }
 
-  teste() {
+  detalhesConta() {
     console.log('clique');
-    this.router.navigate(['']);
+    this.router.navigate(['userdetails']);
+  }
+  emprestimo() {
+    console.log('clique')
+    this.router.navigate(['loan']);
   }
 }
