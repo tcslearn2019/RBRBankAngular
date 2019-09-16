@@ -4,22 +4,31 @@
 <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
     <mat-tab label="Entrar">
         <div class="center">
-            <form method="POST" class="example-form paddin-user">
+            <form class="example-form paddin-user" [formGroup]="user"> 
                 <mat-form-field class="example-full-width">
-                    <input id="login" name="login" matInput placeholder="CPF" mask='000.000.000-00' />
+                    <input id="CPF" name="CPF" matInput placeholder="CPF" formControlName="CPF"  mask='000.000.000-00' />
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input id="password" name="password" type="password" matInput placeholder="Senha" />
+                    <input id="password" name="password" type="password" matInput formControlName="password" placeholder="Senha" 
+                    [errorStateMatcher]="matcher" maxlength="16" />
+                    <mat-error *ngIf="user.hasError('required')">
+                        Senha Inválida!
+                    </mat-error>
+                    <mat-error *ngIf="user.hasError('minlength')">
+                        Sua senha deve conter pelo menos 6 dígitos!
+                    </mat-error>
                 </mat-form-field>
+
             </form>
 
             <div class="example-button-row">
-                <button mat-flat-button (click)="login(user)" color="primary">Acessar</button>
+                <button mat-flat-button (click)="getLogin(user)" color="primary">Acessar</button>
             </div>
             <p>Ainda não é cadastrado? <a href="#cadastrar">Cadastre-se</a></p>
         </div>
     </mat-tab>
+    
     <mat-tab label="Cadastrar" id="cadastrar">
         <div class="center">
             <form class="example-form paddin-user">
@@ -39,7 +48,7 @@
                     <input type="password" matInput placeholder="Senha" [formControl]="senhaFormControl"
                         [errorStateMatcher]="matcher" maxlength="16" />
                     <mat-error *ngIf="senhaFormControl.hasError('required')">
-                        Sua senha deve ter pelo menos 6 dígitos!
+                        Sua senha deve conter pelo menos 6 dígitos!
                     </mat-error>
 
                 </mat-form-field>

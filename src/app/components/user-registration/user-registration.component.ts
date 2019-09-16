@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import { Validators, FormControl, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { UserService } from '../../services/users/user.service';
-import { User } from '../../models/users/user';
+
+
+
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,7 +20,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  private user: User;
   nomeFormControl = new FormControl('', [
     Validators.required,
     Validators.maxLength(55),
@@ -37,14 +38,32 @@ export class UserRegistrationComponent implements OnInit {
     Validators.maxLength(16)
   ]);
 
+  user = new FormGroup({
+    CPF: new FormControl(),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(16)
+    ])
+ });
+
+  ;
   matcher = new MyErrorStateMatcher();
-  constructor(private userService: UserService) { }
+  constructor(private userservice: UserService) { }
+
 
   ngOnInit() {
   }
 
-  login(user) {
-    this.userService.login(user);
+  getLogin(user) {
+    console.log(user.value);
+    console.log(user.status);
+    this.userservice.getLogin(user.value).subscribe(r =>{
+      console.log(r);
+    },
+    err => {
+      console.log(err);
+    });
   }
 
 }
