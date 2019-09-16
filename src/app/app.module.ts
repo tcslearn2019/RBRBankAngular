@@ -24,15 +24,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
-
-
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
   { path: 'index', component: IndexComponent},
-  { path: 'userdetails', component: UserdetailsComponent}
+  { path: 'userdetails', component: UserdetailsComponent},  
+  { path: 'loan', component: LoanComponent}
 ];
 
 import {NgxMaskModule, IConfig} from 'ngx-mask';
@@ -49,7 +49,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     TransferComponent,
     IndexComponent,
     UserdetailsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LoanComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +77,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatDividerModule
+    MatDividerModule,
+    MatListModule  
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

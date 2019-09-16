@@ -25,7 +25,9 @@
     
   }
   .example-card{      
-    max-width: 265px;
+    vertical-align: top;
+    width: 270px;
+    height: 350px;
     margin-left: 17px;
     border: 1px solid #000;
     border-radius: 10px 3%;
@@ -33,10 +35,13 @@
     box-shadow: 1px 1px 5px red; 
     display: inline-block;        
     position:relative;
-    cursor: pointer;                       
-  }
+    cursor: pointer;                    
+  }  
+
   .example-card2 {
-    max-width: 290px;
+    vertical-align: top;
+    width: 270px;
+    height: 350px;
     margin-left: 17px;    
     border: 1px solid #000;
     border-radius: 10px 3%;
@@ -46,7 +51,9 @@
     position: relative;
   }
   .example-card3 {
-    max-width: 300px;
+    vertical-align: top;
+    width: 270px;
+    height: 350px;
     margin-left: 17px;    
     border: 1px solid #000;
     border-radius: 10px 3%;
@@ -55,8 +62,10 @@
     display: inline-block;
     position: relative;
   }
-  .example-card4 {    
-    max-width: 292px;
+  .example-card4 { 
+    vertical-align: top;   
+    width: 270px;
+    height: 350px;
     margin-left: 17px;    
     border: 1px solid #000;
     border-radius: 10px 3%;
@@ -64,6 +73,32 @@
     box-shadow: 1px 1px 5px red;
     display: inline-block;
     position: relative;
+  }
+  .example-card:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.9);    
+  }
+  .cor{
+    color:black;
+  }
+  .example-card2:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+  .example-card3:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+  .example-card4:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.9);
+    cursor: pointer;
   }
   .titleCorrente{
       text-align: left;

@@ -1,0 +1,54 @@
+.titulo{
+    text-align:center;
+  }
+  
+  .tab{  
+    margin:auto;
+    justify-content: center;
+    margin-top: 4%;
+    align-content: center;
+    width: 38%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px red;
+    padding: 0px 50px;
+    background-color: white;
+  }
+
+  .example-button-row button,
+  .example-button-row {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 2.5%;
+    
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    
+  } 
+
+  .center{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    display: flex;
+  }
+
+  .inputcenter{
+    padding-left: 18px;
+    margin-left: -14px;
+       
+  }
+  
+  body{
+    background-color: #EFE9E5;
+  }
+
+
+  
