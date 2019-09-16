@@ -25,10 +25,10 @@
             <form class="example-form paddin-user">
                 <mat-form-field class="example-full-width">
                     <input type="text" matInput placeholder="Nome Completo" [formControl]="nomeFormControl"
-                    [errorStateMatcher]="matcher" />
+                        [errorStateMatcher]="matcher" />
                     <mat-error *ngIf="nomeFormControl.hasError('required')">
-                            Digite seu nome
-                          </mat-error>
+                        Digite seu nome!
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
@@ -36,11 +36,20 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input type="password" matInput placeholder="Senha" />
+                    <input type="password" matInput placeholder="Senha" [formControl]="senhaFormControl"
+                        [errorStateMatcher]="matcher" maxlength="16" />
+                    <mat-error *ngIf="senhaFormControl.hasError('required')">
+                        Sua senha deve ter pelo menos 6 dígitos!
+                    </mat-error>
+
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input type="password" matInput placeholder="Confirme sua senha" />
+                    <input type="password" matInput placeholder="Confirme sua senha"
+                        [formControl]="confSenhaFormControl" [errorStateMatcher]="matcher" maxlength="16" />
+                    <mat-error *ngIf="confSenhaFormControl.hasError('required')">
+                        Suas senhas não conferem!
+                    </mat-error>
                 </mat-form-field>
             </form>
             <div class="example-button-row">
