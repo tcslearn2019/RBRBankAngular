@@ -9,6 +9,10 @@ import { InvestmentComponent } from './components/investment/investment.componen
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IndexComponent } from './components/index/index.component';
+import { FormsModule } from '@angular/forms';
+import { UserdetailsComponent } from './components/userdetails/userdetails.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -21,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -36,9 +40,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
-import { FormsModule } from '@angular/forms';
-import { UserdetailsComponent } from './components/userdetails/userdetails.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { User } from 'src/app/models/users/user';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,19 +10,20 @@ export class UserService {
   private baseUrl: string = 'http://localhost:8080/rbr/user';
 
   private parans: HttpParams;
-  constructor(private httpCli: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getUser(numberAccount: number) {
     this.parans = new HttpParams();
     this.parans = this.parans.set('numberAccount', numberAccount.toString());
     const param = {params: this.parans};
-    return this.httpCli.get(this.baseUrl + '/cli', param);
+    return this.http.get(this.baseUrl + '/cli', param);
   }
 
-  login(user) {
-    const json = '{"CPF": ' + user.login + ',"password":' + user.password + '}';
+  getLogin(user: User): Observable<any> {
+    console.log('entrei');
+    const json = {'cpf':  user.CPF  ,'password' : user.password };
     console.log(json);
-    return this.httpCli.post(this.baseUrl + '/login', JSON.parse(json));
+    return this.http.post(this.baseUrl + '/login', json);
   }
 
 }
