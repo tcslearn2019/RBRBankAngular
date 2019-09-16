@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { UserService } from '../../services/users/user.service';
-import { User } from '../../models/users/user';
+
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,7 +17,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  private user: User;
   nomeFormControl = new FormControl('', [
     Validators.required,
     Validators.maxLength(55),
@@ -38,13 +36,10 @@ export class UserRegistrationComponent implements OnInit {
   ]);
 
   matcher = new MyErrorStateMatcher();
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  login(user) {
-    this.userService.login(user);
-  }
 
 }
