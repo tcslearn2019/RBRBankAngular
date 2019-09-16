@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
   { path: 'index', component: IndexComponent},
-  { path: 'userdetails', component: UserdetailsComponent},  
+  { path: 'userdetails', component: UserdetailsComponent},
   { path: 'loan', component: LoanComponent}
 ];
 
@@ -78,7 +78,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ReactiveFormsModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatListModule  
+    MatListModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

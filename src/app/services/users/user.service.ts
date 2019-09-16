@@ -21,9 +21,11 @@ export class UserService {
 
   getLogin(user: User): Observable<any> {
     console.log('entrei');
-    const json = {'cpf':  user.CPF  ,'password' : user.password };
-    console.log(json);
-    return this.http.post(this.baseUrl + '/login', json);
+    return this.http.post(this.baseUrl + '/login', JSON.stringify(user));
+  }
+
+  getRegistration(user: User): Observable<any> {
+    return this.http.post(this.baseUrl + '/reg', JSON.stringify(user));
   }
 
 }

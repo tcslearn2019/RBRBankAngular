@@ -20,23 +20,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  nomeFormControl = new FormControl('', [
-    Validators.required,
-    Validators.maxLength(55),
-    Validators.pattern(/^[a-zA-Z\s]*$/)
-  ]);
-
-  senhaFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(6),
-    Validators.maxLength(16)
-  ]);
-
-  confSenhaFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(6),
-    Validators.maxLength(16)
-  ]);
 
   user = new FormGroup({
     CPF: new FormControl(),
@@ -47,7 +30,20 @@ export class UserRegistrationComponent implements OnInit {
     ])
  });
 
-  ;
+ userRegistration = new FormGroup({
+  name: new FormControl('', [
+    Validators.required,
+    Validators.maxLength(55),
+    Validators.pattern(/^[a-zA-Z\s]*$/)
+  ]),
+  CPF: new FormControl(),
+  password: new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+    Validators.maxLength(16)
+  ])
+});
+
   matcher = new MyErrorStateMatcher();
   constructor(private userservice: UserService) { }
 
@@ -57,8 +53,17 @@ export class UserRegistrationComponent implements OnInit {
 
   getLogin(user) {
     console.log(user.value);
-    console.log(user.status);
-    this.userservice.getLogin(user.value).subscribe(r =>{
+    this.userservice.getLogin(user.value).subscribe(r => {
+      console.log(r);
+    },
+    err => {
+      console.log(err);
+    });
+  }
+
+  getRegistration(userRegistration) {
+    console.log(userRegistration.value);
+    this.userservice.getRegistration(userRegistration.value).subscribe(r => {
       console.log(r);
     },
     err => {
