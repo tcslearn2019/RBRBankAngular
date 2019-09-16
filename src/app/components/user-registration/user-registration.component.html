@@ -4,18 +4,18 @@
 <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
     <mat-tab label="Entrar">
         <div class="center">
-            <form class="example-form paddin-user">
+            <form method="POST" class="example-form paddin-user">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="CPF" mask='000.000.000-00' />
+                    <input id="login" name="login" matInput placeholder="CPF" mask='000.000.000-00' />
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input type="password" matInput placeholder="Senha" />
+                    <input id="password" name="password" type="password" matInput placeholder="Senha" />
                 </mat-form-field>
             </form>
 
             <div class="example-button-row">
-                <button mat-flat-button color="primary">Acessar</button>
+                <button mat-flat-button (click)="login(user)" color="primary">Acessar</button>
             </div>
             <p>Ainda não é cadastrado? <a href="#cadastrar">Cadastre-se</a></p>
         </div>

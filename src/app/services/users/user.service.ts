@@ -16,8 +16,8 @@ export class UserService {
     return this.httpCli.get(this.baseUrl + '/cli', param);
   }
 
-  getLogin(login: string, password: string) {
-    const json = '{"login": ' + login + ',"password":' + 'password' + '}';
+  login(user) {
+    const json = '{"CPF": ' + user.login + ',"password":' + user.password + '}';
     console.log(json);
     return this.httpCli.post(this.baseUrl + '/login', JSON.parse(json));
   }
