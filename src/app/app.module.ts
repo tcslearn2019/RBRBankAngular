@@ -76,10 +76,11 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatListModule  
+    MatListModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }
 
