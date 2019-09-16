@@ -25,13 +25,13 @@ export class UserRegistrationComponent implements OnInit {
     Validators.pattern(/^[a-zA-Z\s]*$/)
   ]);
   matcher = new MyErrorStateMatcher();
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   login(user) {
-    this.userService.login(user);
+    //this.userService.login(user);
   }
 
 }
