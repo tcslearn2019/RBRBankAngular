@@ -21,6 +21,19 @@ export class UserRegistrationComponent implements OnInit {
     Validators.maxLength(55),
     Validators.pattern(/^[a-zA-Z\s]*$/)
   ]);
+
+  senhaFormControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+    Validators.maxLength(16)
+  ]);
+
+  confSenhaFormControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+    Validators.maxLength(16)
+  ]);
+
   matcher = new MyErrorStateMatcher();
   constructor() { }
 
