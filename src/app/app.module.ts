@@ -20,10 +20,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent},
@@ -74,7 +73,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatDividerModule
+    MatDividerModule,
+    MatListModule  
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

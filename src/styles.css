@@ -5,5 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #B11521 ;
 }
 .mat-flat-button.mat-primary{
+    margin-left: -20px;
+    width: 125px;
     background-color: #B11521 ;
 }
