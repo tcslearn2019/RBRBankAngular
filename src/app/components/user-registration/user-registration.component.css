@@ -39,3 +39,10 @@
   margin-right: 8px;
   width: 15%;
 }
+
+.logoTipo{
+  position: relative;      
+  padding: none;
+  height: 64px;      
+  width: 190px;
+}

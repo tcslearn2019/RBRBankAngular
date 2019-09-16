@@ -78,10 +78,11 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ReactiveFormsModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }
 

@@ -107,7 +107,14 @@
   }
   body{
     background-color: #EFE9E5;
-    border-right: 1px solid #000  
+    border-right: 1px solid #000;    
+  }
+  .cards {
+    align-content: center;
+    margin-left: 2%;
+  }
+  .fundo {
+    background-size: cover;        
   }
   hr{
     background-color: black;
