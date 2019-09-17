@@ -46,3 +46,22 @@
   height: 64px;      
   width: 190px;
 }
+
+.example-radio-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+#example-radio-group-label{
+  margin-right: 3%;
+}
+
+.tipoConta{
+  margin-bottom: 4%;
+  margin-top: 1.2%;
+}

@@ -1,0 +1,55 @@
+
+.example-container {
+     display: flex;
+     flex-direction: column;
+}
+
+.example-container > * {
+     width: 100%;
+    min-width: 150px;
+    max-width: 500px;
+}
+
+  .tab{  
+    margin:auto;
+    margin-top: 4%;
+    align-content: center;
+    width: 38%;
+    height: min-content;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px red;
+    padding: 0px 50px;
+    padding-top: 1.5%;
+    background: white;  
+  }
+
+  .inputPad{
+      margin-top: 2%;
+      margin-bottom: 1%;
+      color: gray;
+      align-content: flex-start !important;
+  }
+
+  .padding{
+      margin-bottom: 3.2%;
+  }
+
+  .center{
+      align-content: center;
+      align-items: center;
+
+  }
+
+.example-button-row{
+    position: relative;
+    margin-bottom: 3.5%;
+    flex-direction: row;
+    text-align: center;
+}
+
+.example-button-row2{
+    flex-direction: row;
+    margin-bottom: 3.5%;
+    margin-left: 6%;
+}
