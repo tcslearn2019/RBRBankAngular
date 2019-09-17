@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/models/users/user';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -20,8 +20,10 @@ export class UserService {
   }
 
   getLogin(user: User): Observable<any> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     console.log('entrei');
-    return this.http.post(this.baseUrl + '/login', JSON.stringify(user));
+    return this.http.post(this.baseUrl + '/login', JSON.stringify(user), {headers});
   }
 
   getRegistration(user: User): Observable<any> {

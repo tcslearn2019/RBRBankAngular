@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-investment',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router){ }
 
   ngOnInit() {
   }
 
+  investimento(){
+    console.log('clique');
+    this.router.navigate(['index']);
+  }
 }
