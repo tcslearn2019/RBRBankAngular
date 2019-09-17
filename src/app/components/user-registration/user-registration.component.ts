@@ -22,7 +22,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class UserRegistrationComponent implements OnInit {
 
   user = new FormGroup({
-    CPF: new FormControl(),
+    cpf: new FormControl(),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
@@ -36,7 +36,7 @@ export class UserRegistrationComponent implements OnInit {
     Validators.maxLength(55),
     Validators.pattern(/^[a-zA-Z\s]*$/)
   ]),
-  CPF: new FormControl(),
+  cpf: new FormControl(),
   password: new FormControl('', [
     Validators.required,
     Validators.minLength(6),
@@ -54,7 +54,7 @@ export class UserRegistrationComponent implements OnInit {
   getLogin(user) {
     console.log(user.value);
     this.userservice.getLogin(user.value).subscribe(r => {
-      console.log(r);
+      console.log('r: ' + r);
     },
     err => {
       console.log(err);
