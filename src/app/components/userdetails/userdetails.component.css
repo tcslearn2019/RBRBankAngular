@@ -15,7 +15,9 @@ body{
   box-shadow: 1px 1px 5px red;
   padding: 0px 50px;
   padding-bottom: 20px;
-  background: white;  
+  background: white;
+  background-image: url("https://cdn.pixabay.com/photo/2013/08/28/11/47/green-leaf-176722_960_720.jpg");
+  background-size: cover;
 }
 .example-button-row button,
 .example-button-row {  

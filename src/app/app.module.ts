@@ -13,29 +13,30 @@ import { FormsModule } from '@angular/forms';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
-import {MatCheckboxModule, MatProgressSpinnerModule, MatCardModule, MatIconModule} from '@angular/material';
+import { MatCheckboxModule, MatProgressSpinnerModule, MatCardModule, MatIconModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
-import {MatListModule} from '@angular/material';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material';
+import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  { path: '', component: UserRegistrationComponent},
-  { path: 'index', component: IndexComponent},
-  { path: 'userdetails', component: UserdetailsComponent},
-  { path: 'loan', component: LoanComponent}
+  { path: '', component: UserRegistrationComponent },
+  { path: 'index', component: IndexComponent },
+  { path: 'userdetails', component: UserdetailsComponent },
+  { path: 'loan', component: LoanComponent },
+  { path: 'investment', component: InvestmentComponent }
 ];
 
-import {NgxMaskModule, IConfig} from 'ngx-mask';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
@@ -50,7 +51,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     IndexComponent,
     UserdetailsComponent,
     ToolbarComponent,
-    LoanComponent
+    LoanComponent,   
   ],
   imports: [
     BrowserModule,

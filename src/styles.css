@@ -4,12 +4,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-tab-group.mat-primary .mat-ink-bar{
     background-color: #B11521 ;
 }
-.mat-flat-button.mat-primary{
-    margin-left: -20px;
+.mat-flat-button.mat-primary{    
     width: 125px;
     background-color: #B11521 ;
 }
 
 .mat-list-base .mat-list-item .mat-list-item-content{
     padding: 0 !important;
+}
+
+.mat-form-field{
+    caret-color: green;
 }
