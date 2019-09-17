@@ -12,7 +12,7 @@
     border-radius: 10px;
     box-shadow: 1px 1px 5px red;
     padding: 0px 50px;
-    background-color: white;
+    background-color: white;    
   }
 
   .example-button-row button,
@@ -25,7 +25,7 @@
   .example-form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
+    width: 100%;    
   }
   
   .example-full-width {
