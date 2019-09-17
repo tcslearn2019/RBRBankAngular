@@ -13,6 +13,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 0 !important;
 }
 
-.mat-form-field{
-    caret-color: green;
+.mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: green;
+}
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: green;
 }

@@ -1,20 +1,20 @@
-<mat-toolbar class="containe" >
+<mat-toolbar class="containe">
     <div class="logoTipo">
-        <img height="64px" src ="../../../assets/img/logobrancoo.png"/></div>
+        <img height="64px" src="../../../assets/img/logobrancoo.png" /></div>
 </mat-toolbar>
 
 <h3></h3>
 <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
     <mat-tab label="Entrar">
         <div class="center">
-            <form class="example-form paddin-user" (click)="reveal()"[formGroup]="user"> 
+            <form class="example-form paddin-user" [formGroup]="user">
                 <mat-form-field class="example-full-width">
-                    <input id="cpf" name="cpf" matInput placeholder="CPF" formControlName="cpf"  mask='000.000.000-00' />
+                    <input id="CPF" name="CPF" matInput placeholder="CPF" formControlName="cpf" mask='000.000.000-00' />
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input id="password" name="password" type="password" matInput formControlName="password" placeholder="Senha" 
-                    [errorStateMatcher]="matcher" maxlength="16" />
+                    <input id="password" name="password" type="password" matInput formControlName="password"
+                        placeholder="Senha" [errorStateMatcher]="matcher" maxlength="16" />
                     <mat-error *ngIf="user.hasError('required')">
                         Senha Inválida!
                     </mat-error>
@@ -31,12 +31,12 @@
             <p>Ainda não é cadastrado? <a href="#cadastrar">Cadastre-se</a></p>
         </div>
     </mat-tab>
-    
+
     <mat-tab label="Cadastrar" id="cadastrar">
         <div class="center">
             <form class="example-form paddin-user" [formGroup]="userRegistration">
                 <mat-form-field class="example-full-width">
-                    <input type="text" matInput placeholder="Nome Completo" id="name" name="name" formControlName="name" 
+                    <input type="text" matInput placeholder="Nome Completo" id="name" name="name" formControlName="name"
                         [errorStateMatcher]="matcher" />
                     <mat-error *ngIf="userRegistration.hasError('required')">
                         Digite seu nome!
@@ -53,8 +53,20 @@
                     <mat-error *ngIf="userRegistration.hasError('required')">
                         Sua senha deve conter pelo menos 6 dígitos!
                     </mat-error>
-
                 </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input type="date" matInput placeholder="Data de Nascimento" />
+                </mat-form-field>
+                
+                <div class="tipoConta">
+                <label id="example-radio-group-label">Selecione o tipo de conta: </label>
+                <mat-radio-group aria-label="Selecione o tipo de conta">
+                    <mat-radio-button value="1">Corrente</mat-radio-button>
+                    <mat-radio-button value="2">Poupança</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <hr>
             </form>
             <div class="example-button-row">
                 <button mat-flat-button color="primary" (click)="getRegistration(userRegistration)">Cadastrar</button>

@@ -22,18 +22,21 @@ import { MatCheckboxModule, MatProgressSpinnerModule, MatCardModule, MatIconModu
 import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material';
-import { MatDividerModule } from '@angular/material/divider';
-import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material';
+import {MatDividerModule} from '@angular/material/divider';
+import {HttpClientModule} from '@angular/common/http';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent },
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
-  { path: 'investment', component: InvestmentComponent }
+  { path: 'investment', component: InvestmentComponent },
+  { path: 'transfer', component: TransferComponent}
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -80,6 +83,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatFormFieldModule,
     MatDividerModule,
     MatListModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

@@ -21,6 +21,12 @@ export class IndexComponent implements OnInit {
     console.log('clique');
     this.router.navigate(['loan']);
   }
+
+  transferencia(){
+    console.log('clique')
+    this.router.navigate(['transfer']);
+  }
+  
   investmento(){
     console.log('clique');
     this.router.navigate(['investment']);
