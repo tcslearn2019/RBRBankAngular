@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,4 +16,4 @@ export class LoanComponent implements OnInit {
     console.log('clique');
     this.router.navigate(['index']);
   }
-}
+}  
