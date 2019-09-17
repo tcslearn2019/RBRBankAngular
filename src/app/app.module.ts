@@ -84,6 +84,5 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
   providers: [UserService],
   bootstrap: [AppComponent],
 })
-
 export class AppModule { }
 
