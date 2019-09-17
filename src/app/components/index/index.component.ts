@@ -26,4 +26,5 @@ export class IndexComponent implements OnInit {
     console.log('clique')
     this.router.navigate(['transfer']);
   }
+ 
 }

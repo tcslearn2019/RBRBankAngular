@@ -18,6 +18,7 @@
       padding: none;
       height: 64px;      
       width: 64px;
+      cursor: pointer;
   }
   .imagens{
     margin-top: -10px;
@@ -131,4 +132,8 @@
   .hrTop{
     margin-top: 105px;
     background-color: black;
+  }
+
+  .cursor{
+    cursor: pointer;
   }
