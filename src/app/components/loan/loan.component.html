@@ -10,7 +10,7 @@
         <mat-divider></mat-divider>
         <form class="example-form">                            
             <mat-form-field class="example-full-width">
-                <input class="inputcenter" matInput placeholder="Novo Emprestimo">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="inputcenter" matInput placeholder="Novo Emprestimo">
             </mat-form-field>
             <div class="center">
                 <div class="example-button-row">
