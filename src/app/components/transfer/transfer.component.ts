@@ -11,5 +11,4 @@ export class TransferComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

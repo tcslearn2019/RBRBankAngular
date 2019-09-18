@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loan',
   templateUrl: './loan.component.html',
-  styleUrls: ['./loan.component.css']
+  styleUrls: ['./loan.component.css']  
 })
 export class LoanComponent implements OnInit {
 
@@ -16,4 +16,4 @@ export class LoanComponent implements OnInit {
     console.log('clique');
     this.router.navigate(['index']);
   }
-}
+}  
