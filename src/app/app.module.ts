@@ -54,7 +54,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     IndexComponent,
     UserdetailsComponent,
     ToolbarComponent,
-    LoanComponent,   
+    LoanComponent
   ],
   imports: [
     BrowserModule,

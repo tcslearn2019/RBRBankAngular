@@ -12,9 +12,9 @@ export class InvestmentComponent implements OnInit {
 
   ngOnInit() {
   }
-
   investimento(){
     console.log('clique');
     this.router.navigate(['index']);
-  }
-}
+  }  
+} 
+

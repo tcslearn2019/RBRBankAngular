@@ -1,73 +1,80 @@
 <div class="fundo">
   <body>    
     <app-toolbar></app-toolbar>
-      <hr class="hrTop">
-      <div class="imagens">
-        <div class="cards">
-          <mat-card class="example-card" (click)="detalhesConta()">               
-            <mat-card-header>      
-              <div mat-card-avatar class="example-header-image"></div>        
-              <mat-card-title class="titleCorrente">Detalhes da Conta</mat-card-title>    
-            </mat-card-header>            
-            <img mat-card-image src="https://cdn.pixabay.com/photo/2016/02/19/11/19/office-1209640_960_720.jpg" >        
-            <mat-card-content>        
-              <p>
-                Saiba todas as informações sobre sua conta.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button class="abraConta">Abra sua conta</button>  
-            </mat-card-actions>
-          </mat-card>       
-          <mat-card class="example-card2" (click)="emprestimo()">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title class="titleCorrente">Emprestimo</mat-card-title>    
-            </mat-card-header>
-            <img mat-card-image src="https://image.freepik.com/fotos-gratis/casal-de-consultoria-com-agente-imobiliario_23-2147797582.jpg" >
-            <mat-card-content>
-              <p>
-                Precisando de um emprestimo?
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button class="abraConta">Realize emprestimo</button>  
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card3" (click)="investmento()">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title class="titleCorrente">Investimento</mat-card-title>    
-            </mat-card-header>
-            <img mat-card-image src="https://cdn.pixabay.com/photo/2018/03/08/06/17/financial-3207895_960_720.jpg" >
-            <mat-card-content>
-              <p>
-                Realize seus investimentos.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button class="abraConta">Acesse o investimento</button>  
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card4" (click)="transferencia()">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title class="titleCorrente">Transferência</mat-card-title>    
-            </mat-card-header>
-            <img mat-card-image src="https://image.freepik.com/fotos-gratis/empresario-segurando-a-nota-de-dolar-para-pagamento-o-dolar-americano-e-a-principal-e-popular-moeda-de-troca-do-mundo-conceito-de-investimento-e-economia_50039-994.jpg" >
-            <mat-card-content>
-              <p>
-                Saiba todas as informações sobre sua conta.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button class="abraConta">Abra sua conta</button>  
-            </mat-card-actions>
-          </mat-card>
-        </div>  
-                <hr>
+      <div class="top">            
+        <div class="imagens">
+            <div class="container">
+                <hr class="toper">
+              <div class="cards">
+                
+                <div class="alinhando">
+                <mat-card class="example-card" (click)="detalhesConta()">               
+                  <mat-card-header>      
+                    <div mat-card-avatar class="example-header-image"></div>        
+                    <mat-card-title class="titleCorrente">Detalhes da Conta</mat-card-title>    
+                  </mat-card-header>            
+                  <img mat-card-image src="https://cdn.pixabay.com/photo/2016/02/19/11/19/office-1209640_960_720.jpg" >        
+                  <mat-card-content>        
+                    <p>
+                      Saiba todas as informações sobre sua conta.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button class="abraConta">Abra sua conta</button>  
+                  </mat-card-actions>
+                </mat-card>       
+                <mat-card class="example-card2" (click)="emprestimo()">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title class="titleCorrente">Emprestimo</mat-card-title>    
+                  </mat-card-header>
+                  <img mat-card-image src="https://image.freepik.com/fotos-gratis/casal-de-consultoria-com-agente-imobiliario_23-2147797582.jpg" >
+                  <mat-card-content>
+                    <p>
+                      Precisando de um emprestimo?
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button class="abraConta">Realize emprestimo</button>  
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="example-card3" (click)="investmento()">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title class="titleCorrente">Investimento</mat-card-title>    
+                  </mat-card-header>
+                  <img mat-card-image src="https://cdn.pixabay.com/photo/2018/03/08/06/17/financial-3207895_960_720.jpg" >
+                  <mat-card-content>
+                    <p>
+                      Realize seus investimentos.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button class="abraConta">Acesse o investimento</button>  
+                  </mat-card-actions>
+                </mat-card>
+                <mat-card class="example-card4" (click)="transferencia()">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title class="titleCorrente">Transferência</mat-card-title>    
+                  </mat-card-header>
+                  <img mat-card-image src="https://image.freepik.com/fotos-gratis/empresario-segurando-a-nota-de-dolar-para-pagamento-o-dolar-americano-e-a-principal-e-popular-moeda-de-troca-do-mundo-conceito-de-investimento-e-economia_50039-994.jpg" >
+                  <mat-card-content>
+                    <p>
+                      Saiba todas as informações sobre sua conta.
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button class="abraConta">Abra sua conta</button>  
+                  </mat-card-actions>
+                </mat-card>
+                </div>
+            </div>  
+            <hr>                 
+          </div> 
+        </div>       
       </div>
-  </body>
+ </body>
 </div>
   
   
