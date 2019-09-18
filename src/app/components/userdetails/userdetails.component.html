@@ -3,17 +3,17 @@
   <mat-list>    
     <div class="tab">
       <h1 class="titulo">Detalhes da Conta</h1>
-      <mat-list-item>Nome:{{user.name}}</mat-list-item>
+      <mat-list-item>Nome: {{user.name}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>CPF:{{user.cpf}}</mat-list-item>
+      <mat-list-item>CPF: {{user.cpf}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Número da Conta:{{user.account.numberAccount}}</mat-list-item>
+      <mat-list-item>Número da Conta: {{user.account.numberAccount}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Saldo:{{user.account.balance}}</mat-list-item>
+      <mat-list-item>Saldo: {{user.account.balance}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Limite Máximo:</mat-list-item>
+      <mat-list-item>Limite Máximo: ###### </mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Limite de Emprestimo:{{user.account.nameloanLimit}}</mat-list-item>
+      <mat-list-item>Limite de Emprestimo: {{user.account.loanLimit}}</mat-list-item>
       <mat-divider></mat-divider>    
       <div class="example-button-row">
         <button mat-flat-button color="primary" (click)="voltardetalhes()">Voltar</button>          

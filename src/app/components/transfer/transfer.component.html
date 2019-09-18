@@ -1,25 +1,25 @@
 <app-toolbar></app-toolbar>
 
 <body class="tab">
-        <div class="center">
-        <div class="example-container">
-            <mat-list-item class="inputPad">Sua conta:</mat-list-item>
+    <div class="center">
+        <div class="example-container" [formGroup]="transf">
+            <mat-list-item class="inputPad">Agencia: {{user.account.bankBranch}} Conta: {{user.account.numberAccount}}</mat-list-item>
             <mat-divider class="padding"></mat-divider>
 
-            <mat-form-field>
-                <input matInput type="text" placeholder="Valor a ser transferido">
+            <mat-form-field >
+                <input matInput type="text" formControlName="value" placeholder="Valor a ser transferido">
             </mat-form-field>
 
-            <mat-form-field>
-                <input matInput placeholder="Número da conta que receberá a transferência">
+            <mat-form-field >
+                <input matInput formControlName="accountReciever" type="text" placeholder="Número da conta que receberá a transferência">
             </mat-form-field>
-            <mat-form-field>                                    
-                <input type="password" matInput placeholder="Confime sua senha">
+            <mat-form-field >                                    
+                <input formControlName="password" type="password" matInput placeholder="Confime sua senha">
             </mat-form-field>
         </div>
         <div class="example-button-row">
-            <button  mat-flat-button color="primary">Transferir</button>
-            <button class="example-button-row2" mat-flat-button color="primary">Cancelar</button>
+            <button  mat-flat-button color="primary" (click)="doTransfer(transf)">Transferir</button>
+            <button class="example-button-row2" (click)="cancelar()" mat-flat-button color="primary">Cancelar</button>
         </div>                
     </div>
 </body>
