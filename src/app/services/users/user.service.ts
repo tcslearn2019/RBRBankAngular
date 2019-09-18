@@ -3,6 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/models/users/user';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { TransferRequest } from 'src/app/request/transfer-request';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +32,12 @@ export class UserService {
     this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
     console.log(user);
     return this.http.post(this.baseUrl + '/reg', JSON.stringify(user), {headers: this.headers});
+  }
+
+  doTransfer(transfer: TransferRequest) {
+    this.headers = new HttpHeaders();
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post(this.baseUrl + '/transfer', JSON.stringify(transfer), {headers: this.headers});
   }
 
   setterUser(user: User) {
