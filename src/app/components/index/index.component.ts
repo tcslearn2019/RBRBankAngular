@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/users/user';
 
 @Component({
   selector: 'app-index',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
+  user: User;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -22,12 +23,11 @@ export class IndexComponent implements OnInit {
     this.router.navigate(['loan']);
   }
 
-  transferencia(){
-    console.log('clique')
+  transferencia() {
+    console.log('clique');
     this.router.navigate(['transfer']);
   }
-  
-  investmento(){
+  investmento() {
     console.log('clique');
     this.router.navigate(['investment']);
   }

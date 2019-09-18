@@ -1,8 +1,10 @@
 import { User } from '../users/user';
 
 export class Account {
-    saldo: number;
+    id: number;
+    balance: number;
     loanLimit: number;
-    user: User;
     accountType: string;
+    bankBranch: number;
+    numberAccount: number;
 }

@@ -8,8 +8,9 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class UserService {
   private baseUrl: string = 'http://localhost:8080/rbr/user';
-
+  user: User;
   private parans: HttpParams;
+  private headers: HttpHeaders;
   constructor(private http: HttpClient) { }
 
   getUser(numberAccount: number) {
@@ -20,14 +21,24 @@ export class UserService {
   }
 
   getLogin(user: User): Observable<any> {
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    console.log('entrei');
-    return this.http.post(this.baseUrl + '/login', JSON.stringify(user), {headers});
+    this.headers = new HttpHeaders();
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post(this.baseUrl + '/login', JSON.stringify(user), {headers: this.headers});
   }
 
   getRegistration(user: User): Observable<any> {
-    return this.http.post(this.baseUrl + '/reg', JSON.stringify(user));
+    this.headers = new HttpHeaders();
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    console.log(user);
+    return this.http.post(this.baseUrl + '/reg', JSON.stringify(user), {headers: this.headers});
+  }
+
+  setterUser(user: User) {
+    this.user = user;
+  }
+
+  getterUser() {
+    return this.user;
   }
 
 }
