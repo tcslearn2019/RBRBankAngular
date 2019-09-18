@@ -1,12 +1,5 @@
-.container {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: baseline;
-    align-content: flex-end;
-    background-color: #B11521;
-    color: white;
+.container {                 
+    background-color: #B11521;  
   }
   .comeco{
     margin-right: 40%;
@@ -21,9 +14,18 @@
       cursor: pointer;
   }
   .imagens{
-    margin-top: -10px;
-    text-align:left; 
+    margin-top: -10px;    
+    text-align:center;    
+  }
+  hr {
     
+    
+  }
+  .alinhando{
+    align-content: center;
+    text-align: center;  
+    margin-right: 1.5%; 
+    padding-bottom: 1%     
   }
   .example-card{      
     vertical-align: top;
@@ -33,10 +35,10 @@
     border: 1px solid #000;
     border-radius: 10px 3%;
     margin-top: 10px;    
-    box-shadow: 1px 1px 5px red; 
+    box-shadow: 3px 3px 5px green; 
     display: inline-block;        
     position:relative;
-    cursor: pointer;                    
+    cursor: pointer;                        
   }  
 
   .example-card2 {
@@ -47,7 +49,7 @@
     border: 1px solid #000;
     border-radius: 10px 3%;
     margin-top: 10px;    
-    box-shadow: 1px 1px 5px red;
+    box-shadow: 3px 3px 5px green;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -60,7 +62,7 @@
     border: 1px solid #000;
     border-radius: 10px 3%;
     margin-top: 10px;    
-    box-shadow: 1px 1px 5px red;
+    box-shadow: 3px 3px 5px green;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -73,7 +75,7 @@
     border: 1px solid #000;
     border-radius: 10px 3%;
     margin-top: 10px;    
-    box-shadow: 1px 1px 5px red;
+    box-shadow: 3px 3px 5px green;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -120,18 +122,14 @@
     border-right: 1px solid #000;    
   }
   .cards {
-    align-content: center;
-    margin-left: 2%;
+    text-align:left;
+
   }
   .fundo {
     background-size: cover;        
-  }
-  hr{
-    background-color: black;
-  }  
-  .hrTop{
-    margin-top: 105px;
-    background-color: black;
+  }   
+  .top{
+    margin-top: 100px;        
   }
 
   .cursor{

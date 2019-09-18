@@ -18,4 +18,8 @@ export class ToolbarComponent implements OnInit {
   index() {
     this.router.navigate(['index']);
   }
+  redirecionamento(){
+    console.log ('clique');
+    this.router.navigate(['index']);
+  }
 }
