@@ -23,8 +23,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  
-
   user = new FormGroup({
     cpf: new FormControl(),
     password: new FormControl('', [
@@ -61,6 +59,13 @@ export class UserRegistrationComponent implements OnInit {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
 
+      if (r == null) {
+        console.log('ta vazio');
+      } else {
+        console.log('ta certo');
+        this.userservice.setterUser(r);
+        this.router.navigate(['index']);
+      }
     },
     err => {
       console.log(err);
@@ -71,15 +76,15 @@ export class UserRegistrationComponent implements OnInit {
     const userFormatado = this.formatUser(userRegistration.value);
     this.userservice.getRegistration(userFormatado).subscribe(r => {
       console.log(r);
-      this.router.navigate(['index']);
     },
     err => {
+      console.log('errs');
       console.log(err);
     });
   }
 
   formatUser(userRegistration): any {
-    let user = new User();
+    const user = new User();
     user.account = new Account();
 
     user.name = userRegistration.name;

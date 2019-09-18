@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/users/user';
+import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,13 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  user: User;
+  constructor(private userservice: UserService, private router: Router) { }
 
   ngOnInit() {
+    console.log('entrei toolbar');
+    this.user = this.userservice.getterUser();
+    console.log(this.user);
   }
-  index(){
-    console.log('clique')
-    this.router.navigate(['index'])
+  index() {
+    this.router.navigate(['index']);
   }
 }
