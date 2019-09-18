@@ -22,4 +22,8 @@ export class ToolbarComponent implements OnInit {
     console.log ('clique');
     this.router.navigate(['index']);
   }
+  sair(){
+    console.log('clique');
+    this.router.navigate([''])
+  }
 }

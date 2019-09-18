@@ -12,6 +12,7 @@ export class UserdetailsComponent implements OnInit {
   user: User;
   constructor(private userservice: UserService, private router: Router ) { }
 
+  
   ngOnInit() {
     this.user = this.userservice.getterUser();
   }

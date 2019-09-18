@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Validators, FormControl, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { UserService } from '../../services/users/user.service';
 import { User } from 'src/app/models/users/user';
 import { Account } from 'src/app/models/accounts/account';
 import { Router } from '@angular/router';
-
+import { MatDialog } from '@angular/material';
 
 
 
@@ -51,10 +51,11 @@ export class UserRegistrationComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   constructor(private userservice: UserService, private router: Router) { }
 
-
   ngOnInit() {
   }
 
+  openDialog(): void {    
+  }
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
@@ -75,7 +76,8 @@ export class UserRegistrationComponent implements OnInit {
   getRegistration(userRegistration) {
     const userFormatado = this.formatUser(userRegistration.value);
     this.userservice.getRegistration(userFormatado).subscribe(r => {
-      console.log(r);
+      console.log(r); 
+      this.openDialog();
     },
     err => {
       console.log('errs');
@@ -95,4 +97,5 @@ export class UserRegistrationComponent implements OnInit {
 
     return user;
   }
+
 }
