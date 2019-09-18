@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormControl, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { UserService } from '../../services/users/user.service';
+import { User } from 'src/app/models/users/user';
+import { Account } from 'src/app/models/accounts/account';
+import { Router } from '@angular/router';
 
 
 
@@ -20,6 +23,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
+  
 
   user = new FormGroup({
     cpf: new FormControl(),
@@ -41,20 +45,22 @@ export class UserRegistrationComponent implements OnInit {
     Validators.required,
     Validators.minLength(6),
     Validators.maxLength(16)
-  ])
+  ]),
+  birthDate: new FormControl(),
+  accountType: new FormControl()
 });
 
   matcher = new MyErrorStateMatcher();
-  constructor(private userservice: UserService) { }
+  constructor(private userservice: UserService, private router: Router) { }
 
 
   ngOnInit() {
   }
 
   getLogin(user) {
-    console.log(user.value);
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
+
     },
     err => {
       console.log(err);
@@ -62,13 +68,26 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   getRegistration(userRegistration) {
-    console.log(userRegistration.value);
-    this.userservice.getRegistration(userRegistration.value).subscribe(r => {
+    const userFormatado = this.formatUser(userRegistration.value);
+    this.userservice.getRegistration(userFormatado).subscribe(r => {
       console.log(r);
+      this.router.navigate(['index']);
     },
     err => {
       console.log(err);
     });
   }
 
+  formatUser(userRegistration): any {
+    let user = new User();
+    user.account = new Account();
+
+    user.name = userRegistration.name;
+    user.cpf = userRegistration.cpf;
+    user.birthDate = userRegistration.birthDate;
+    user.password = userRegistration.password;
+    user.account.accountType = userRegistration.accountType;
+
+    return user;
+  }
 }

@@ -56,14 +56,14 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input type="date" matInput placeholder="Data de Nascimento" />
+                    <input type="date" formControlName="birthDate" matInput placeholder="Data de Nascimento" />
                 </mat-form-field>
                 
                 <div class="tipoConta">
                 <label id="example-radio-group-label">Selecione o tipo de conta: </label>
-                <mat-radio-group aria-label="Selecione o tipo de conta">
-                    <mat-radio-button value="1">Corrente</mat-radio-button>
-                    <mat-radio-button value="2">Poupança</mat-radio-button>
+                <mat-radio-group formControlName="accountType" aria-label="Selecione o tipo de conta">
+                    <mat-radio-button value="Corrente">Corrente</mat-radio-button>
+                    <mat-radio-button value="Poupança">Poupança</mat-radio-button>
                   </mat-radio-group>
                 </div>
                 <hr>
