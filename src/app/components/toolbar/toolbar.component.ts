@@ -13,9 +13,7 @@ export class ToolbarComponent implements OnInit {
   constructor(private userservice: UserService, private router: Router) { }
 
   ngOnInit() {
-    console.log('entrei toolbar');
     this.user = this.userservice.getterUser();
-    console.log(this.user);
   }
   index() {
     this.router.navigate(['index']);
