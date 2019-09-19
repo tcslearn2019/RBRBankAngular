@@ -1,0 +1,26 @@
+<app-toolbar></app-toolbar>
+
+<mat-list>
+    <div class="tab">
+        <h1 class="titulo">Depósito</h1>
+        <mat-list-item style="align-content: center"> Agencia:</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Número da Conta:</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="CPF" mask='000.000.000-00' />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input type="password" matInput placeholder="Senha" maxlength="16" />
+        </mat-form-field>
+        <mat-list-item>
+            <input type="number" matInput placeholder="Digite o valor que deseja depositar"/>
+        </mat-list-item>
+        
+        <div class="example-button-row">
+            <button mat-flat-button color="primary">Depositar</button>
+            <button mat-flat-button color="primary">Cancelar</button>
+        </div>
+    </div>
+</mat-list>
