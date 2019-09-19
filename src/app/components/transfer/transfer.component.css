@@ -4,12 +4,6 @@
      flex-direction: column;
 }
 
-.example-container > * {
-     width: 100%;
-    min-width: 150px;
-    max-width: 500px;
-}
-
   .tab{  
     margin:auto;
     margin-top: 4%;

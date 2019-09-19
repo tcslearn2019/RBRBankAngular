@@ -14,10 +14,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple{
-    background-color: green;
+    background-color: green !important;
 }
 .mat-form-field.mat-focused .mat-form-field-label {
-    color: green;
+    color: green !important;
 }
 .mat-card > :last-child:not(.mat-card-footer) {
     margin-bottom: 0;
