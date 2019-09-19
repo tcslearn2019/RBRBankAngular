@@ -3,11 +3,11 @@
   <mat-list>    
     <div class="tab">
       <h1 class="titulo">Poupança</h1>
-      <mat-list-item style="align-content: center"> Agencia: {{user.account.bankBranch}}</mat-list-item>
+      <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Número da Conta: {{user.account.numberAccount}}</mat-list-item>
+      <mat-list-item>Número da Conta: {{user?.account.numberAccount}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Nome: {{user.name}}</mat-list-item>
+      <mat-list-item>Nome: {{user?.name}}</mat-list-item>
       <mat-divider></mat-divider>    
       <mat-list-item>Saldo: {{user?.account.balance}}</mat-list-item>
       <mat-divider></mat-divider>
