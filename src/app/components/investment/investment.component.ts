@@ -20,6 +20,14 @@ export class InvestmentComponent implements OnInit {
   poupanca(){
     console.log('clique');
     this.router.navigate(['investment-savings']);
+  }
+  cdi(){
+    console.log('clique');
+    this.router.navigate(['investment-cdi']);
   }  
+  ipca(){
+    console.log('clique');
+    this.router.navigate(['investment-ipca']);
+  }
 } 
 

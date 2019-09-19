@@ -14,6 +14,8 @@ import { UserdetailsComponent } from './components/userdetails/userdetails.compo
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
 import { DepositComponent } from './components/deposit/deposit.component';
+import { InvestmentCdiComponent } from './components/investment-cdi/investment-cdi.component';
+import { InvestmentIpcaComponent } from './components/investment-ipca/investment-ipca.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -39,12 +41,15 @@ const appRoutes: Routes = [
   { path: 'loan', component: LoanComponent },
   { path: 'investment', component: InvestmentComponent },
   { path: 'transfer', component: TransferComponent},
-  { path: 'deposit', component: DepositComponent },
-  { path: 'investment-savings', component: InvestmentSavingsComponent }
+  { path: 'deposit', component: DepositComponent},
+  { path: 'investment-savings', component: InvestmentSavingsComponent},
+  { path: 'investment-cdi', component: InvestmentCdiComponent},
+  { path: 'investment-ipca', component: InvestmentIpcaComponent}
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -61,6 +66,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     LoanComponent,
     DepositComponent,
     InvestmentSavingsComponent,
+    InvestmentCdiComponent,
+    InvestmentIpcaComponent,
   ],
   imports: [
     BrowserModule,

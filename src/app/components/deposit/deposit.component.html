@@ -7,19 +7,16 @@
         <mat-divider></mat-divider>
         <mat-list-item>Número da Conta:</mat-list-item>
         <mat-divider></mat-divider>
-
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="CPF" mask='000.000.000-00' />
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <input type="password" matInput placeholder="Senha" maxlength="16" />
-        </mat-form-field>
-        <mat-list-item>
-            <input type="number" matInput placeholder="Digite o valor que deseja depositar"/>
-        </mat-list-item>
-        
+        <form>
+            <mat-form-field class="example-full-width margin-bottom-btn">
+                <input matInput placeholder="CPF" mask='000.000.000-00' />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="password" matInput placeholder="Senha" maxlength="16" />
+            </mat-form-field>
+        </form>
         <div class="example-button-row">
-            <button mat-flat-button color="primary">Depositar</button>
+            <button  mat-flat-button color="primary">Depositar</button>
             <button mat-flat-button color="primary">Cancelar</button>
         </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/users/user';
 
 @Component({
   selector: 'app-investment-savings',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestmentSavingsComponent implements OnInit {
 
+  user: User;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  voltardetalhes() {
+    
   }
 
 }
