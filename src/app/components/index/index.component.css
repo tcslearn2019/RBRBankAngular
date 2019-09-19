@@ -1,3 +1,8 @@
+.abraConta{
+  align-content: flex-start;  
+  align-items: baseline;
+  align-self: baseline;
+}
 .container {                 
     background-color: #B11521;  
   }
@@ -16,10 +21,6 @@
   .imagens{
     margin-top: -10px;    
     text-align:center;    
-  }
-  hr {
-    
-    
   }
   .alinhando{
     align-content: center;
@@ -115,15 +116,13 @@
   .titleCorrente{
       text-align: left;
       text-indent: -58px; 
-
-  }
+    }
   body{
     background-color: #EFE9E5;
     border-right: 1px solid #000;    
   }
   .cards {
     text-align:left;
-
   }
   .fundo {
     background-size: cover;        
@@ -134,4 +133,4 @@
 
   .cursor{
     cursor: pointer;
-  }
+  }  

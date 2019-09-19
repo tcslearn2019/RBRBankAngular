@@ -31,19 +31,17 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
-  { path: '', component: UserRegistrationComponent },
-  { path: 's', component: UserRegistrationComponent },  
+  { path: '', component: UserRegistrationComponent },  
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
   { path: 'investment', component: InvestmentComponent },
   { path: 'transfer', component: TransferComponent},
-  { path: 'confirmation-dialog', component: ConfirmationDialogComponent},
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -58,7 +56,6 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     UserdetailsComponent,
     ToolbarComponent,
     LoanComponent,
-    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,9 +87,6 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatRadioModule,
     MatSelectModule,
     MatDialogModule 
-  ],
-  entryComponents: [
-    ConfirmationDialogComponent
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

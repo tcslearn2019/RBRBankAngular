@@ -5,7 +5,7 @@ import { UserService } from '../../services/users/user.service';
 import { User } from 'src/app/models/users/user';
 import { Account } from 'src/app/models/accounts/account';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material';
+import { Location } from '@angular/common';
 
 
 
@@ -49,9 +49,19 @@ export class UserRegistrationComponent implements OnInit {
 });
 
   matcher = new MyErrorStateMatcher();
-  constructor(private userservice: UserService, private router: Router) { }
+  constructor(private location: Location, private userservice: UserService, private router: Router) { }
 
   ngOnInit() {
+  }
+  
+  cadastrar() {
+    if(confirm("Deseja confirmar?")) {        
+      console.log('clique');      
+      location.reload() ;           
+    }
+    else{
+      this.router.navigate(['']);
+    }      
   }
 
   openDialog(): void {    
@@ -59,7 +69,6 @@ export class UserRegistrationComponent implements OnInit {
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
-
       if (r == null) {
         console.log('ta vazio');
       } else {

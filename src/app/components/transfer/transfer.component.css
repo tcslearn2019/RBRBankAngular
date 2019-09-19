@@ -41,15 +41,19 @@
 
   }
 
-.example-button-row{
+.example-button-row {
     position: relative;
-    margin-bottom: 3.5%;
-    flex-direction: row;
-    text-align: center;
+    margin-bottom: 3.5%;        
+    display: inline-flex;
+    width: 20% !important;
 }
 
-.example-button-row2{
-    flex-direction: row;
+.example-button-row2{    
     margin-bottom: 3.5%;
     margin-left: 6%;
+    display: inline-flex;  
+    width: 20% !important;
+}
+.centralizando{    
+    text-align: center;
 }
