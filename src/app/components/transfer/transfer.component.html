@@ -4,7 +4,7 @@
     <div class="center">
         <div class="example-container" [formGroup]="transf">
             <mat-list-item class="inputPad">Agencia: {{user.account.bankBranch}} Conta: {{user.account.numberAccount}}</mat-list-item>
-            <mat-divider class="padding"></mat-divider>
+            <mat-divider class="margin-bottom-center"></mat-divider>
 
             <mat-form-field >
                 <input matInput type="text" formControlName="value" placeholder="Valor a ser transferido">
@@ -17,7 +17,7 @@
                 <input formControlName="password" type="password" matInput placeholder="Confime sua senha">
             </mat-form-field>
         </div> 
-        <div class="centralizando">
+        <div class="margin-bottom-center">
             <button class="example-button-row"  mat-flat-button color="primary" (click)="doTransfer(transf)">Transferir</button>                             
             <button class="example-button-row2" mat-flat-button color="primary" (click)="cancelar()">Cancelar</button>
         </div>

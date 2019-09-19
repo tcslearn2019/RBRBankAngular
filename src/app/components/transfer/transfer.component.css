@@ -25,29 +25,26 @@
       align-content: flex-start !important;
   }
 
-  .padding{
+  .margin-bottom-center{
       margin-bottom: 3.2%;
+      align-content: center;
+      align-items: center;
+      text-align: center;
   }
 
   .center{
       align-content: center;
       align-items: center;
-
   }
 
 .example-button-row {
-    position: relative;
-    margin-bottom: 3.5%;        
-    display: inline-flex;
-    width: 20% !important;
+    position: relative;       
+    width: 25%;
+    text-align: center;
 }
 
 .example-button-row2{    
-    margin-bottom: 3.5%;
     margin-left: 6%;
-    display: inline-flex;  
-    width: 20% !important;
-}
-.centralizando{    
     text-align: center;
+    width: 25%;
 }

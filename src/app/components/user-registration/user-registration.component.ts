@@ -53,19 +53,7 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  cadastrar() {
-    if(confirm("Deseja confirmar?")) {        
-      console.log('clique');      
-      location.reload() ;           
-    }
-    else{
-      this.router.navigate(['']);
-    }      
-  }
 
-  openDialog(): void {    
-  }
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
@@ -86,6 +74,12 @@ export class UserRegistrationComponent implements OnInit {
     const userFormatado = this.formatUser(userRegistration.value);
     this.userservice.getRegistration(userFormatado).subscribe(r => {
       console.log(r);
+      if (r == null) {
+        alert('Usuario invalido');
+      } else {
+        alert('Usuario cadastrado com Sucesso');
+        location.reload();
+      }
     },
     err => {
       console.log('errs');
