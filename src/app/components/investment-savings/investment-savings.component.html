@@ -10,10 +10,12 @@
       <mat-list-item>Nome: {{user?.name}}</mat-list-item>
       <mat-divider></mat-divider>    
       <mat-list-item>Saldo: {{user?.account.balance}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-form-field class="example-full-width">
-        <input id="CPF" name="CPF" matInput placeholder="Valor que deseja aplicar"/>
-      </mat-form-field>               
+      <mat-divider></mat-divider> 
+      <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input type="text" class="inputcenter" mask="comma_separator.2" matInput placeholder="Valor que deseja aplicar">
+            </mat-form-field> 
+        </form>                   
       <div class="example-button-row">
         <button mat-flat-button color="primary" (click)="voltardetalhes()">Aplicar</button>          
       </div>          
