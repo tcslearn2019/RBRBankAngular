@@ -1,0 +1,22 @@
+<app-toolbar></app-toolbar>
+<body>
+  <mat-list>    
+    <div class="tab">
+      <h1 class="titulo">Poupança</h1>
+      <mat-list-item style="align-content: center"> Agencia: {{user.account.bankBranch}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Número da Conta: {{user.account.numberAccount}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Nome: {{user.name}}</mat-list-item>
+      <mat-divider></mat-divider>    
+      <mat-list-item>Saldo: {{user.account.balance}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-form-field class="example-full-width">
+        <input id="CPF" name="CPF" matInput placeholder="Valor que deseja aplicar"/>
+      </mat-form-field>                
+      <div class="example-button-row">
+        <button mat-flat-button color="primary" (click)="voltardetalhes()">Aplicar</button>          
+      </div>          
+    </div>    
+  </mat-list>
+</body>

@@ -57,7 +57,13 @@
       text-align: left;
       text-indent: -58px; 
     }
+<<<<<<< HEAD
+  body{
+    border-right: 1px solid #000;    
+  }
+=======
 
+>>>>>>> e238eb5b0af25daf0bd97aa8212bbcdf0e54527a
   .cards {
     text-align:left;
   }

@@ -1,5 +1,9 @@
 html, body { height: 100%; }
+<<<<<<< HEAD
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#EFE9E5; }
+=======
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #EFE9E5; }
+>>>>>>> e238eb5b0af25daf0bd97aa8212bbcdf0e54527a
 
 .mat-tab-group.mat-primary .mat-ink-bar{
     background-color: #B11521 ;

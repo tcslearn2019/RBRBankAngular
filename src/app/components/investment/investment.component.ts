@@ -16,6 +16,10 @@ export class InvestmentComponent implements OnInit {
   investimento(){
     console.log('clique');
     this.router.navigate(['index']);
+  }
+  poupanca(){
+    console.log('clique');
+    this.router.navigate(['investment-savings']);
   }  
 } 
 
