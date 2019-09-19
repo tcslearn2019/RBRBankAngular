@@ -31,11 +31,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
-<<<<<<< HEAD
   { path: '', component: UserRegistrationComponent },  
-=======
-  { path: '', component: UserRegistrationComponent },
->>>>>>> 3c3d85960896b2be88fc87c1ec6c83cc7590ab0b
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
@@ -45,10 +41,6 @@ const appRoutes: Routes = [
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
-
-=======
->>>>>>> 3c3d85960896b2be88fc87c1ec6c83cc7590ab0b
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
