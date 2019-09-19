@@ -20,7 +20,6 @@
     align-items: center;
     text-align: center;
     margin: auto;
-    margin-top: 10px;
     width: 200px;
     display: inline;
     margin-left: 4.4%;
@@ -29,4 +28,8 @@
 .example-full-width{
     width: 100%;
 }
-  
+
+.margin-bottom-btn{
+    margin-top: 1.5%;
+    margin-bottom: -2.5%;
+}
