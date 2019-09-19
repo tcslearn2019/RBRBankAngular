@@ -57,3 +57,12 @@ body{
 .abraConta{
   margin-top: 10px;
 }
+.altoRed{
+  color:red;
+}
+.medioCinza{
+  color: rgb(111, 111, 117);
+}
+.baixoBlue{
+  color: blue;
+}

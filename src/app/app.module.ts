@@ -38,13 +38,17 @@ const appRoutes: Routes = [
   { path: 'investment', component: InvestmentComponent },
   { path: 'transfer', component: TransferComponent},
   { path: 'deposit', component: DepositComponent},
-  { path: 'investment-savings', component: InvestmentSavingsComponent}
+  { path: 'investment-savings', component: InvestmentSavingsComponent},
+  { path: 'investment-cdi', component: InvestmentCdiComponent},
+  { path: 'investment-ipca', component: InvestmentIpcaComponent}
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DepositComponent } from './deposit/deposit.component';
 import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
+import { InvestmentCdiComponent } from './components/investment-cdi/investment-cdi.component';
+import { InvestmentIpcaComponent } from './components/investment-ipca/investment-ipca.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -61,6 +65,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     LoanComponent,
     DepositComponent,
     InvestmentSavingsComponent,
+    InvestmentCdiComponent,
+    InvestmentIpcaComponent,
   ],
   imports: [
     BrowserModule,

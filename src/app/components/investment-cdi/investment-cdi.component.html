@@ -1,0 +1,24 @@
+<app-toolbar></app-toolbar>
+<body>
+  <mat-list>    
+    <div class="tab">
+      <h1 class="titulo">Certificado de Depósito Interbancário</h1>
+      <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Número da Conta: {{user?.account.numberAccount}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Nome: {{user?.name}}</mat-list-item>
+      <mat-divider></mat-divider>    
+      <mat-list-item>Saldo: {{user?.account.balance}}</mat-list-item>
+      <mat-divider></mat-divider> 
+      <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input type="text" class="inputcenter" mask="comma_separator.2" matInput placeholder="Valor que deseja aplicar">
+            </mat-form-field> 
+        </form>                   
+      <div class="example-button-row">
+        <button mat-flat-button color="primary">Aplicar</button>          
+      </div>          
+    </div>    
+  </mat-list>
+</body>
