@@ -2,11 +2,11 @@
 <body>
     <mat-list>
         <div class="tab">
-            <mat-list-item>Valor Máximo de Emprestimo: R$:10.000</mat-list-item>
+            <mat-list-item>Valor Máximo de Emprestimo: R$:5.000</mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>Valor Emprestado: R$:5.000</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>Valor Disponível: R$:5.000</mat-list-item>
+            <mat-list-item>Valor Disponível: R$ {{user.account.loanLimit}}</mat-list-item>
             <mat-divider></mat-divider>
             <form class="example-form">                            
                 <mat-form-field class="example-full-width">                                

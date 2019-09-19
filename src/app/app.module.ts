@@ -18,7 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
-import { MatCheckboxModule, MatProgressSpinnerModule, MatCardModule, MatIconModule } from '@angular/material';
+import { MatCheckboxModule, MatProgressSpinnerModule, MatCardModule, MatIconModule, MatDialog, MatDialogModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,12 +31,12 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
-  { path: '', component: UserRegistrationComponent },
+  { path: '', component: UserRegistrationComponent },  
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
   { path: 'investment', component: InvestmentComponent },
-  { path: 'transfer', component: TransferComponent}
+  { path: 'transfer', component: TransferComponent},
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -84,7 +84,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatDividerModule,
     MatListModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule 
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

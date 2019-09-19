@@ -1,17 +1,72 @@
-<app-toolbar></app-toolbar>   
-    <h1 class="titulo">Investimento | Poupança</h1> 
-        <mat-tab-group class="tab" mat-align-tabs="center">                    
-            <mat-tab label="Poupança">            
-                <mat-list class="aplicaPoup">    
-                    <mat-list-item>Aplicação Mínima:R$ 0.01</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>Rentabilidade: 4.52%</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>Risco: baixo</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <button class="btnPoup" mat-flat-button color="primary" (click)="investimento()">Aplicar</button>
-                </mat-list>
-            </mat-tab>
-            <mat-tab label="CDI"> CDI </mat-tab>
-            <mat-tab label="IPCA"> IPCA </mat-tab>
-        </mat-tab-group>    
+<app-toolbar></app-toolbar>
+<div class="fundo">
+    <h1 class="tituloInvest">Investimento</h1>      
+    <body>                            
+        <div class="top">                      
+            <div class="imagens">
+                <div class="container">        
+                    <hr class="toper">        
+                        <div class="cards">                
+                            <div class="alinhando">
+                                <mat-card class="example-card" (click)="detalhesConta()">               
+                                    <mat-card-header>      
+                                        <div mat-card-avatar class="example-header-image"></div>        
+                                        <mat-card-title class="titleCorrente">Poupança</mat-card-title>    
+                                    </mat-card-header>            
+                                    <img height="125"mat-card-image src="../../../assets/img/poupanca.jpg" >                                                 
+                                        <mat-list class="aplicaPoup">    
+                                            <mat-list-item>Aplicação Mínima:R$ 0.01</mat-list-item>
+                                            <mat-divider></mat-divider>
+                                            <mat-list-item>Rentabilidade: 4.52%</mat-list-item>
+                                            <mat-divider></mat-divider>
+                                            <mat-list-item>Risco: baixo</mat-list-item>
+                                            <mat-divider></mat-divider>
+                                            <mat-card-actions>
+                                                <button mat-flat-button color="primary" class="abraConta">Investir Poupança</button>                    
+                                            </mat-card-actions>
+                                        </mat-list>                                                                                                                                                                                                                  
+                                </mat-card>
+                                <mat-card class="example-card" (click)="detalhesConta()">               
+                                        <mat-card-header>      
+                                            <div mat-card-avatar class="example-header-image"></div>        
+                                            <mat-card-title class="titleCorrente">CDI</mat-card-title>    
+                                        </mat-card-header>            
+                                        <img height="125"mat-card-image src="../../../assets/img/cdi.jpg" >                                                 
+                                            <mat-list class="aplicaPoup">    
+                                                <mat-list-item>Aplicação Mínima:R$ 0.01</mat-list-item>
+                                                <mat-divider></mat-divider>
+                                                <mat-list-item>Rentabilidade: 4.52%</mat-list-item>
+                                                <mat-divider></mat-divider>
+                                                <mat-list-item>Risco: baixo</mat-list-item>
+                                                <mat-divider></mat-divider>
+                                                <mat-card-actions>
+                                                    <button mat-flat-button color="primary" class="abraConta">Investir CDI</button>                    
+                                                </mat-card-actions>
+                                            </mat-list>                                                                                                                                                                          
+                                    </mat-card>
+                                    <mat-card class="example-card" (click)="detalhesConta()">               
+                                            <mat-card-header>      
+                                                <div mat-card-avatar class="example-header-image"></div>        
+                                                <mat-card-title class="titleCorrente">IPCA</mat-card-title>    
+                                            </mat-card-header>            
+                                            <img height="125"mat-card-image src="../../../assets/img/ipca.jpg" >                                                 
+                                                <mat-list class="aplicaPoup">    
+                                                    <mat-list-item>Aplicação Mínima:R$ 0.01</mat-list-item>
+                                                    <mat-divider></mat-divider>
+                                                    <mat-list-item>Rentabilidade: 4.52%</mat-list-item>
+                                                    <mat-divider></mat-divider>
+                                                    <mat-list-item>Risco: baixo</mat-list-item>
+                                                    <mat-divider></mat-divider>
+                                                    <mat-card-actions>
+                                                        <button mat-flat-button color="primary" class="abraConta">Investir IPCA</button>                    
+                                                    </mat-card-actions>
+                                                </mat-list>                                                                                                                                                                          
+                                        </mat-card>
+                            </div>                              
+                        </div> 
+                    <hr> 
+                </div>
+            </div>
+        </div>    
+    </body>
+</div>

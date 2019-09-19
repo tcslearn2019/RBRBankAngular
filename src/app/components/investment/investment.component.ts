@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./investment.component.css']
 })
 export class InvestmentComponent implements OnInit {
+  ativaPoupanca: boolean = false;
 
   constructor(private router: Router){ }
 

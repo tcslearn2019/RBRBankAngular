@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Validators, FormControl, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { UserService } from '../../services/users/user.service';
 import { User } from 'src/app/models/users/user';
 import { Account } from 'src/app/models/accounts/account';
 import { Router } from '@angular/router';
-
+import { Location } from '@angular/common';
 
 
 
@@ -49,16 +49,26 @@ export class UserRegistrationComponent implements OnInit {
 });
 
   matcher = new MyErrorStateMatcher();
-  constructor(private userservice: UserService, private router: Router) { }
-
+  constructor(private location: Location, private userservice: UserService, private router: Router) { }
 
   ngOnInit() {
   }
+  
+  cadastrar() {
+    if(confirm("Deseja confirmar?")) {        
+      console.log('clique');      
+      location.reload() ;           
+    }
+    else{
+      this.router.navigate(['']);
+    }      
+  }
 
+  openDialog(): void {    
+  }
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
-
       if (r == null) {
         console.log('ta vazio');
       } else {
@@ -83,7 +93,7 @@ export class UserRegistrationComponent implements OnInit {
     });
   }
 
-  formatUser(userRegistration): any {
+  formatUser(userRegistration): User {
     const user = new User();
     user.account = new Account();
 
@@ -92,7 +102,8 @@ export class UserRegistrationComponent implements OnInit {
     user.birthDate = userRegistration.birthDate;
     user.password = userRegistration.password;
     user.account.accountType = userRegistration.accountType;
-
+    user.account.balance = 1000;
     return user;
   }
+
 }

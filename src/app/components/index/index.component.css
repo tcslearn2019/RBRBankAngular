@@ -1,3 +1,8 @@
+.abraConta{
+  align-content: flex-start;  
+  align-items: baseline;
+  align-self: baseline;
+}
 .container {                 
     background-color: #B11521;  
   }
@@ -17,70 +22,27 @@
     margin-top: -10px;    
     text-align:center;    
   }
-  hr {
-    
-    
-  }
   .alinhando{
     align-content: center;
     text-align: center;  
     margin-right: 1.5%; 
     padding-bottom: 1%     
   }
-  .example-card{      
+  .example-card, .example-card2, .example-card3, .example-card4{      
     vertical-align: top;
     width: 270px;
     height: 350px;
     margin-left: 17px;
     border: 1px solid #000;
-    border-radius: 10px 3%;
-    margin-top: 10px;    
+    border-radius: 3% 3%;
+    margin-top: 1%;    
     box-shadow: 3px 3px 5px green; 
     display: inline-block;        
     position:relative;
     cursor: pointer;                        
   }  
 
-  .example-card2 {
-    vertical-align: top;
-    width: 270px;
-    height: 350px;
-    margin-left: 17px;    
-    border: 1px solid #000;
-    border-radius: 10px 3%;
-    margin-top: 10px;    
-    box-shadow: 3px 3px 5px green;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-  }
-  .example-card3 {
-    vertical-align: top;
-    width: 270px;
-    height: 350px;
-    margin-left: 17px;    
-    border: 1px solid #000;
-    border-radius: 10px 3%;
-    margin-top: 10px;    
-    box-shadow: 3px 3px 5px green;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-  }
-  .example-card4 { 
-    vertical-align: top;   
-    width: 270px;
-    height: 350px;
-    margin-left: 17px;    
-    border: 1px solid #000;
-    border-radius: 10px 3%;
-    margin-top: 10px;    
-    box-shadow: 3px 3px 5px green;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-  }
-  .example-card:hover{
+  .example-card:hover, .example-card2:hover, .example-card3:hover, .example-card4:hover{
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.9);
@@ -90,48 +52,16 @@
   .cor{
     color:black;
   }
-  .example-card2:hover{
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.9);
-    transition: 1s;
-    cursor: pointer;
-  }
-  .example-card3:hover{
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.9);
-    cursor: pointer;
-    transition: 1s;
-  }
-  .example-card4:hover{
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.9);
-    transition: 1s;
-    cursor: pointer;
-    
-  }
+
   .titleCorrente{
       text-align: left;
       text-indent: -58px; 
+    }
 
-  }
-  body{
-    background-color: #EFE9E5;
-    border-right: 1px solid #000;    
-  }
   .cards {
     text-align:left;
-
   }
-  .fundo {
-    background-size: cover;        
-  }   
+
   .top{
-    margin-top: 100px;        
-  }
-
-  .cursor{
-    cursor: pointer;
+    margin-top: 7.5%;   
   }

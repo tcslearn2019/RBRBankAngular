@@ -2,7 +2,6 @@
     <div class="logoTipo">
         <img height="64px" src="../../../assets/img/logobrancoo.png" /></div>
 </mat-toolbar>
-
 <h3></h3>
 <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
     <mat-tab label="Entrar">
@@ -68,9 +67,9 @@
                 </div>
                 <hr>
             </form>
-            <div class="example-button-row">
-                <button mat-flat-button color="primary" (click)="getRegistration(userRegistration)">Cadastrar</button>
-            </div>
+            <div class="example-button-row">                                    
+                <button mat-flat-button color="primary" (click)="cadastrar()" (click)="getRegistration(userRegistration)">Cadastrar</button>      
+            </div>          
         </div>
     </mat-tab>
 </mat-tab-group>
