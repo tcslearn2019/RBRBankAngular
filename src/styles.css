@@ -1,11 +1,15 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+<<<<<<< HEAD
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#EFE9E5; }
+=======
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #EFE9E5; }
+>>>>>>> e238eb5b0af25daf0bd97aa8212bbcdf0e54527a
 
 .mat-tab-group.mat-primary .mat-ink-bar{
     background-color: #B11521 ;
 }
-.mat-flat-button.mat-primary{    
-    width: 125px;
+.mat-flat-button.mat-primary{        
+    width: 71%;
     background-color: #B11521 ;
 }
 
@@ -14,10 +18,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple{
-    background-color: green;
+    background-color: green !important;
 }
 .mat-form-field.mat-focused .mat-form-field-label {
-    color: green;
+    color: green !important;
 }
 .mat-card > :last-child:not(.mat-card-footer) {
     margin-bottom: 0;
@@ -27,4 +31,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .mat-list-base {
     padding-top: 0px !important;    
+}
+.mat-card-actions {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding: 0px !important;
 }

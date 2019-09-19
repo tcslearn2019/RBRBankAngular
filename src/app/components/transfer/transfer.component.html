@@ -16,10 +16,10 @@
             <mat-form-field >                                    
                 <input formControlName="password" type="password" matInput placeholder="Confime sua senha">
             </mat-form-field>
+        </div> 
+        <div class="centralizando">
+            <button class="example-button-row"  mat-flat-button color="primary" (click)="doTransfer(transf)">Transferir</button>                             
+            <button class="example-button-row2" mat-flat-button color="primary" (click)="cancelar()">Cancelar</button>
         </div>
-        <div class="example-button-row">
-            <button  mat-flat-button color="primary" (click)="doTransfer(transf)">Transferir</button>
-            <button class="example-button-row2" (click)="cancelar()" mat-flat-button color="primary">Cancelar</button>
-        </div>                
     </div>
 </body>

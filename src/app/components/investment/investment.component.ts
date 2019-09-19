@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CheckboxControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-investment',
@@ -17,6 +16,10 @@ export class InvestmentComponent implements OnInit {
   investimento(){
     console.log('clique');
     this.router.navigate(['index']);
+  }
+  poupanca(){
+    console.log('clique');
+    this.router.navigate(['investment-savings']);
   }  
 } 
 
