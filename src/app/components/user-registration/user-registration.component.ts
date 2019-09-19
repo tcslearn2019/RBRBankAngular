@@ -85,8 +85,7 @@ export class UserRegistrationComponent implements OnInit {
   getRegistration(userRegistration) {
     const userFormatado = this.formatUser(userRegistration.value);
     this.userservice.getRegistration(userFormatado).subscribe(r => {
-      console.log(r); 
-      this.openDialog();
+      console.log(r);
     },
     err => {
       console.log('errs');
@@ -94,7 +93,7 @@ export class UserRegistrationComponent implements OnInit {
     });
   }
 
-  formatUser(userRegistration): any {
+  formatUser(userRegistration): User {
     const user = new User();
     user.account = new Account();
 
@@ -103,7 +102,7 @@ export class UserRegistrationComponent implements OnInit {
     user.birthDate = userRegistration.birthDate;
     user.password = userRegistration.password;
     user.account.accountType = userRegistration.accountType;
-
+    user.account.balance = 1000;
     return user;
   }
 
