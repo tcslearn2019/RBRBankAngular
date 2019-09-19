@@ -14,7 +14,7 @@ export class UserService {
   private headers: HttpHeaders;
   constructor(private http: HttpClient) { }
 
-  getUser(numberAccount: number) {
+  getUser(numberAccount: number): Observable<any> {
     this.parans = new HttpParams();
     this.parans = this.parans.set('numberAccount', numberAccount.toString());
     const param = {params: this.parans};

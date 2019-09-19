@@ -12,6 +12,8 @@ import { IndexComponent } from './components/index/index.component';
 import { FormsModule } from '@angular/forms';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
+import { DepositComponent } from './components/deposit/deposit.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -31,20 +33,18 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
-  { path: '', component: UserRegistrationComponent },  
+  { path: '', component: UserRegistrationComponent },
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
   { path: 'investment', component: InvestmentComponent },
   { path: 'transfer', component: TransferComponent},
-  { path: 'deposit', component: DepositComponent},
-  { path: 'investment-savings', component: InvestmentSavingsComponent}
+  { path: 'deposit', component: DepositComponent },
+  { path: 'investment-savings', component: InvestmentSavingsComponent }
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DepositComponent } from './deposit/deposit.component';
-import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
