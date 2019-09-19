@@ -72,7 +72,7 @@ export class UserRegistrationComponent implements OnInit {
     });
   }
 
-  getRegistration(userRegistration) {
+  getRegistration(userRegistration){
     const userFormatado = this.formatUser(userRegistration.value);
     this.userservice.getRegistration(userFormatado).subscribe(r => {
       console.log(r);
