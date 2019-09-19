@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoanRequest } from 'src/app/request/loan-request';
+import { User } from 'src/app/models/users/user';
+import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
   selector: 'app-loan',
@@ -9,17 +11,22 @@ import { LoanRequest } from 'src/app/request/loan-request';
   styleUrls: ['./loan.component.css']
 })
 export class LoanComponent implements OnInit {
-    cpf = new FormControl();
+    user: User;
+    value = new FormControl();
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userservice: UserService) { }
 
   ngOnInit() {
+    this.user = this.userservice.getterUser();
   }
 
+  doLoan(value: number) {
 
-  cancelar(loanRequest: LoanRequest) {
+  }
+  cancelar() {
     this.router.navigate(['index']);
   }
 
+ 
 }
