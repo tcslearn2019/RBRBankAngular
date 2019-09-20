@@ -34,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 
+
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent },
   { path: 'index', component: IndexComponent },
