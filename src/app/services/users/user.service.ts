@@ -14,7 +14,7 @@ export class UserService {
   private headers: HttpHeaders;
   constructor(private http: HttpClient) { }
 
-  getUser(numberAccount: number) {
+  getUser(numberAccount: number): Observable<any> {
     this.parans = new HttpParams();
     this.parans = this.parans.set('numberAccount', numberAccount.toString());
     const param = {params: this.parans};
@@ -42,9 +42,9 @@ export class UserService {
 
   setterUser(user: User) {
     this.user = user;
-    const nomes = this.user.name.split('');
-    this.user.firstName = nomes[0] + '' +  nomes[1].trim();
-    this.user.lastName = nomes.slice(2, nomes.length).join('').trim();
+    const nomes = this.user.name.split(' ');
+    this.user.firstName = nomes[0] + ' ' +  nomes[1].trim();
+    this.user.lastName = nomes.slice(2, nomes.length).join(' ').trim();
   }
 
   getterUser() {

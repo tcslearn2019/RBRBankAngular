@@ -1,0 +1,83 @@
+<<<<<<< HEAD:src/app/deposit/deposit.component.css
+.titulo{
+    text-align:center;
+  }
+
+  .tab{  
+    margin:auto;
+    margin-top: 4%;
+    align-content: center;
+    width: 38%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px red;
+    padding: 0px 50px;
+    padding-bottom: 20px;
+    background: white;  
+  }
+  .example-button-row button,
+  .example-button-row { 
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    display: inline;
+    margin-left: 4.4%;
+  }
+  
+.example-full-width{
+    width: 100%;
+}
+
+.margin-bottom-inp{
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+}
+
+.margin-bottom-quant{
+  margin-top: 2%;
+  margin-bottom: -4%;
+}
+=======
+.titulo{
+    text-align:center;
+  }
+  
+  body{
+    background-color: #EFE9E5;
+  }
+  .tab{  
+    margin:auto;
+    margin-top: 4%;
+    align-content: center;
+    width: 38%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow:  3px 2px 3px rgb(26, 139, 26);
+    padding: 0px 50px;
+    padding-bottom: 20px;
+    background: white;  
+    background-size: cover;
+  }
+  .example-button-row button,
+  .example-button-row {  
+    align-content: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 200px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 900px;
+    width: 100%;    
+  }
+  .example-full-width {
+    width: 100%;
+    
+  } 
+  .inputcenter{
+    padding-left: 18px;
+    margin-left: -14px;    
+  }
+>>>>>>> 362e951458800203e8698c6579348fd7693f4640:src/app/components/investment-cdi/investment-cdi.component.css

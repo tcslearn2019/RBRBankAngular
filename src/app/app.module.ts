@@ -12,6 +12,10 @@ import { IndexComponent } from './components/index/index.component';
 import { FormsModule } from '@angular/forms';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
+import { DepositComponent } from './components/deposit/deposit.component';
+import { InvestmentCdiComponent } from './components/investment-cdi/investment-cdi.component';
+import { InvestmentIpcaComponent } from './components/investment-ipca/investment-ipca.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -32,20 +36,21 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 const appRoutes: Routes = [
-  { path: '', component: UserRegistrationComponent },  
+  { path: '', component: UserRegistrationComponent },
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
   { path: 'investment', component: InvestmentComponent },
   { path: 'transfer', component: TransferComponent},
   { path: 'deposit', component: DepositComponent},
-  { path: 'investment-savings', component: InvestmentSavingsComponent}
+  { path: 'investment-savings', component: InvestmentSavingsComponent},
+  { path: 'investment-cdi', component: InvestmentCdiComponent},
+  { path: 'investment-ipca', component: InvestmentIpcaComponent}
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DepositComponent } from './deposit/deposit.component';
-import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
+
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -62,6 +67,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     LoanComponent,
     DepositComponent,
     InvestmentSavingsComponent,
+    InvestmentCdiComponent,
+    InvestmentIpcaComponent,
   ],
   imports: [
     BrowserModule,

@@ -36,7 +36,7 @@
     border: 1px solid #000;
     border-radius: 3% 3%;
     margin-top: 1%;    
-    box-shadow: 3px 3px 5px green; 
+    box-shadow: 3px 3px 3px rgb(26, 139, 26); 
     display: inline-block;        
     position:relative;
     cursor: pointer;                        
@@ -57,13 +57,9 @@
       text-align: left;
       text-indent: -58px; 
     }
-<<<<<<< HEAD
   body{
     border-right: 1px solid #000;    
   }
-=======
-
->>>>>>> e238eb5b0af25daf0bd97aa8212bbcdf0e54527a
   .cards {
     text-align:left;
   }
