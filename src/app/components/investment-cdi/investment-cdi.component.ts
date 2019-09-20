@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { InvestmentRequest } from 'src/app/request/investment-request';
 import { User } from 'src/app/models/users/user';
 import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
-=======
-import { User } from 'src/app/models/users/user';
->>>>>>> 246276e2e17b4b64a0d63f17a23ffe257934497d
 
 @Component({
   selector: 'app-investment-cdi',
