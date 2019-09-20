@@ -12,7 +12,7 @@
 
             <form class="example-form">
                 <mat-form-field class="example-full-width">
-                    <input type="text" class="inputcenter" mask="comma_separator.2" matInput prefix="R$"
+                    <input type="text" class="inputcenter" [formControl]="value" mask="comma_separator.2" matInput prefix="R$"
                         placeholder="Novo Emprestimo">
                 </mat-form-field>
                 <div class="center">

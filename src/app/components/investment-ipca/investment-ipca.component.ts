@@ -4,6 +4,7 @@ import { InvestmentRequest } from 'src/app/request/investment-request';
 import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-investment-ipca',
@@ -17,7 +18,7 @@ export class InvestmentIpcaComponent implements OnInit {
   investmentName: string = 'IPCA';
 
 
-  constructor(private userService: UserService, private investmentService: InvestmentService) { }
+  constructor(private router: Router, private userService: UserService, private investmentService: InvestmentService) { }
 
   ngOnInit() {
     this.user = this.userService.getterUser();
@@ -26,7 +27,16 @@ export class InvestmentIpcaComponent implements OnInit {
   createInvestmentIPCA() {
     const IPCAFormated = this.formatInvestiment(this.value.value, this.user, this.investmentName, this.minimunValue);
     this.investmentService.createInvestment(IPCAFormated).subscribe(r => {
-      console.log(r);
+      this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
+        if (response == null) {
+          alert('error');
+        } else {
+          console.log(response);
+          this.userService.setterUser(response);
+          alert('Investimento feito com sucesso!!!');
+          this.router.navigate(['index']);
+        }
+      });
     }, err => {
       console.log(err);
     });
