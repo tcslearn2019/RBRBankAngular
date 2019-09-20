@@ -19,12 +19,17 @@
     background-size: cover;
   }
   .example-button-row button,
-  .example-button-row {  
+  .example-button-row {
     align-content: center;
     margin: auto;
-    margin-top: 10px;
     width: 200px;
   }
+.space-between-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
   .example-form {
     min-width: 150px;
     max-width: 900px;

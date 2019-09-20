@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/users/user';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-investment-savings',
@@ -10,13 +11,13 @@ export class InvestmentSavingsComponent implements OnInit {
 
   user: User;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
   voltardetalhes() {
-    
+    console.log('clique');
+    this.router.navigate(['investment'])
   }
-
 }

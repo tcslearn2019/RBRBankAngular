@@ -37,14 +37,21 @@
       align-items: center;
   }
 
-.example-button-row {
-    position: relative;       
-    width: 25%;
-    text-align: center;
+  .example-button-row button,
+  .example-button-row {
+    align-content: center;
+    margin: auto;
+    width: 200px;
+    margin-bottom: 2%;
+  }
+.space-between-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.example-button-row2{    
-    margin-left: 6%;
-    text-align: center;
-    width: 25%;
-}
+.example-full-width {
+    width: 100%;
+    
+  } 

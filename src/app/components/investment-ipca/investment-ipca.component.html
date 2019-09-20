@@ -16,9 +16,10 @@
                 <input type="text" class="inputcenter" mask="comma_separator.2" matInput placeholder="Valor que deseja aplicar">
             </mat-form-field> 
         </form>                   
-      <div class="example-button-row">
-        <button mat-flat-button color="primary">Aplicar</button>          
-      </div>          
+        <div class="example-button-row space-between-row example-full-width">
+            <button mat-flat-button color="primary">Aplicar</button>
+            <button mat-flat-button color="warn" (click)="voltarInvestimento()">Cancelar</button>
+          </div>          
     </div>    
   </mat-list>
 </body>

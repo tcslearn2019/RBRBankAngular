@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { User } from 'src/app/models/users/user';
+
 
 @Component({
   selector: 'app-investment-cdi',
@@ -8,9 +10,13 @@ import { User } from 'src/app/models/users/user';
 })
 export class InvestmentCdiComponent implements OnInit {
   user:User;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  voltarInvestimento(){
+    console.log('clique');
+    this.router.navigate(['investment'])
+  }
 }

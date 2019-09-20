@@ -1,24 +1,29 @@
 <app-toolbar></app-toolbar>
+
 <body>
-  <mat-list>    
+  <mat-list>
     <div class="tab">
       <h1 class="titulo">Certificado de Depósito Interbancário</h1>
-      <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}}</mat-list-item>
+
       <mat-divider></mat-divider>
-      <mat-list-item>Número da Conta: {{user?.account.numberAccount}}</mat-list-item>
+      <mat-list-item>Seu saldo atual: {{user?.account.balance}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Nome: {{user?.name}}</mat-list-item>
-      <mat-divider></mat-divider>    
-      <mat-list-item>Saldo: {{user?.account.balance}}</mat-list-item>
-      <mat-divider></mat-divider> 
+      <mat-list-item>Valor mínimo: R$20,00</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Taxa de rendimento: %</mat-list-item>
+      <mat-divider></mat-divider>
       <form class="example-form">
-            <mat-form-field class="example-full-width">
-                <input type="text" class="inputcenter" mask="comma_separator.2" matInput placeholder="Valor que deseja aplicar">
-            </mat-form-field> 
-        </form>                   
-      <div class="example-button-row">
-        <button mat-flat-button color="primary">Aplicar</button>          
-      </div>          
-    </div>    
+        <mat-form-field class="example-full-width">
+          <input type="text" class="inputcenter" mask="comma_separator.2" matInput
+            placeholder="Valor que deseja aplicar" prefix="R$">
+        </mat-form-field>
+
+      </form>
+      <div class="example-button-row space-between-row example-full-width">
+        <button mat-flat-button color="primary">Aplicar</button>
+        <button mat-flat-button color="warn" (click)="voltarInvestimento()">Cancelar</button>
+      </div>
+      
+    </div>
   </mat-list>
 </body>

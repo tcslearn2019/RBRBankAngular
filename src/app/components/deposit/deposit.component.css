@@ -9,7 +9,7 @@
   width: 38%;
   border: 1px solid #000;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px red;
+  box-shadow: 1px 1px 5px green;
   padding: 0px 50px;
   padding-bottom: 20px;
   background: white;  
@@ -38,3 +38,4 @@
 margin-top: 2%;
 margin-bottom: -4%;
 }
+

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/users/user';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-investment-ipca',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./investment-ipca.component.css']
 })
 export class InvestmentIpcaComponent implements OnInit {
-
-  constructor() { }
+  user:User;
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
-
+  voltarInvestimento(){
+    console.log('clique');
+    this.router.navigate(['investment']);
+  }
 }
