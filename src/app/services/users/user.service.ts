@@ -42,9 +42,9 @@ export class UserService {
 
   setterUser(user: User) {
     this.user = user;
-    const nomes = this.user.name.split('');
-    this.user.firstName = nomes[0] + '' +  nomes[1].trim();
-    this.user.lastName = nomes.slice(2, nomes.length).join('').trim();
+    const nomes = this.user.name.split(' ');
+    this.user.firstName = nomes[0] + ' ' +  nomes[1].trim();
+    this.user.lastName = nomes.slice(2, nomes.length).join(' ').trim();
   }
 
   getterUser() {
