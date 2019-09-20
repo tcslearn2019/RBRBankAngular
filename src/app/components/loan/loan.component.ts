@@ -14,12 +14,13 @@ import { AccountService } from 'src/app/services/accounts/account.service';
 export class LoanComponent implements OnInit {
     user: User;
     value = new FormControl();
-
+    valorEmprestado: number;
 
   constructor(private router: Router, private userservice: UserService, private accountService: AccountService) { }
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
+    this.valorEmprestado = (this.user.account.loanLimit - 5000);
   }
 
   doLoan(value: number) {
