@@ -15,7 +15,7 @@
     background: white;  
   }
   .example-button-row button,
-  .example-button-row {  
+  .example-button-row { 
     align-content: center;
     align-items: center;
     text-align: center;
@@ -29,7 +29,12 @@
     width: 100%;
 }
 
-.margin-bottom-btn{
+.margin-bottom-inp{
     margin-top: 1.5%;
-    margin-bottom: -2.5%;
+    margin-bottom: 1%;
+}
+
+.margin-bottom-quant{
+  margin-top: 2%;
+  margin-bottom: -4%;
 }
