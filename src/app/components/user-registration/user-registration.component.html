@@ -36,7 +36,7 @@
             <form class="example-form paddin-user" [formGroup]="userRegistration">
                 <mat-form-field class="example-full-width">
                     <input type="text" matInput placeholder="Nome Completo" id="name" name="name" formControlName="name"
-                        [errorStateMatcher]="matcher" />
+                        [errorStateMatcher]="matcher" type='text'/>
                     <mat-error *ngIf="userRegistration.hasError('required')">
                         Digite seu nome!
                     </mat-error>

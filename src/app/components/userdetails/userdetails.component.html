@@ -19,7 +19,7 @@
       <mat-list-item>Limite de Emprestimo: {{user.account.loanLimit}}</mat-list-item>
       <mat-divider></mat-divider>
       <div class="example-button-row">
-        <button mat-flat-button color="primary" >Depósito</button>
+        <button mat-flat-button color="primary" (click)="deposito()" >Depósito</button>
         <button mat-flat-button color="primary" (click)="voltardetalhes()">Voltar</button>
       </div>
     </div>

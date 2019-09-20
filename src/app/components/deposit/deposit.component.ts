@@ -19,6 +19,11 @@ export class DepositComponent implements OnInit {
     this.user = this.userservice.getterUser();
   }
 
+  voltaDetalhes(){
+    console.log('clique');
+    this.router.navigate(['userdetails'])
+  }
+
   doDeposit() {
   }
 
