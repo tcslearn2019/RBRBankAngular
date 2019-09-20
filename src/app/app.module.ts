@@ -33,6 +33,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {HttpClientModule} from '@angular/common/http';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 const appRoutes: Routes = [
@@ -102,7 +103,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatListModule,
     MatRadioModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

@@ -34,12 +34,6 @@ export class UserService {
     return this.http.post(this.baseUrl + '/reg', JSON.stringify(user), {headers: this.headers});
   }
 
-  doTransfer(transfer: TransferRequest) {
-    this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(this.baseUrl + '/transfer', JSON.stringify(transfer), {headers: this.headers});
-  }
-
   setterUser(user: User) {
     this.user = user;
     const nomes = this.user.name.split(' ');

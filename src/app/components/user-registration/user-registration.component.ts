@@ -62,7 +62,7 @@ export class UserRegistrationComponent implements OnInit {
         alert('Dados inválidos.');
       } else {
         console.log('ta certo');
-        this.userservice.setterUser(r);        
+        this.userservice.setterUser(r);
         this.router.navigate(['index']);
       }
     },

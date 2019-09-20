@@ -3,6 +3,8 @@ import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 import { LoanRequest } from 'src/app/request/loan-request';
 import { InvestmentRequest } from 'src/app/request/investment-request';
 import { Account } from 'src/app/models/accounts/account';
+import { DepositRequest } from 'src/app/request/deposit-request';
+import { TransferRequest } from 'src/app/request/transfer-request';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +20,18 @@ export class AccountService {
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
     return this.http.post(this.baseUrl + '/loan', JSON.stringify(loanRequest), {headers: this.headers});
+  }
+
+  doDeposit(depositRequest: DepositRequest) {
+    this.headers = new HttpHeaders();
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post(this.baseUrl + '/deposit', JSON.stringify(depositRequest), {headers: this.headers});
+  }
+
+  doTransfer(transfer: TransferRequest) {
+    this.headers = new HttpHeaders();
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post(this.baseUrl + '/transfer', JSON.stringify(transfer), {headers: this.headers});
   }
 
   setterAccount(account: Account) {
