@@ -35,6 +35,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
+
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent },
   { path: 'index', component: IndexComponent },
