@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/users/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { TransferRequest } from 'src/app/request/transfer-request';
 import { Router } from '@angular/router';
+import { AccountService } from 'src/app/services/accounts/account.service';
 
 @Component({
   selector: 'app-transfer',
@@ -19,7 +20,7 @@ export class TransferComponent implements OnInit {
     password: new FormControl()
  });
 
-  constructor(private userservice: UserService, private router: Router) { }
+  constructor(private userservice: UserService, private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
@@ -28,9 +29,17 @@ export class TransferComponent implements OnInit {
 doTransfer(transf) {
   if (transf.value.password === this.user.password) {
     const transfFormatado = this.formatTransfer(transf.value);
-    this.userservice.doTransfer(transfFormatado).subscribe(r => {
-      console.log(r);
-      this.router.navigate(['index']);
+    this.accountService.doTransfer(transfFormatado).subscribe(r => {
+      this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
+        if (response == null) {
+          alert('error');
+        } else {
+          console.log(response);
+          this.userservice.setterUser(response);
+          alert('Transferencia feito com sucesso!!!');
+          this.router.navigate(['index']);
+        }
+      });
     },
     err => {
       console.log('errs');

@@ -3,20 +3,20 @@
 <mat-list>
     <div class="tab">
         <h1 class="titulo">Depósito</h1>
-        <mat-list-item style="align-content: center"> Agencia:</mat-list-item>
+        <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}}</mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item>Número da Conta:</mat-list-item>
+        <mat-list-item>Número da Conta: {{user?.account.numberAccount}}</mat-list-item>
         <mat-divider></mat-divider>
         <form>
             <mat-form-field class="example-full-width margin-bottom-quant">
-                <input matInput placeholder="Digite a quantia a ser depositada" mask="comma_separator.2" prefix="R$"/>
+                <input matInput [formControl]="value" placeholder="Digite a quantia a ser depositada" mask="comma_separator.2" prefix="R$"/>
             </mat-form-field>
             <mat-form-field class="example-full-width margin-bottom-inp">
-                <input type="password" matInput placeholder="Senha" maxlength="16" />
+                <input type="password" [formControl]="password" matInput placeholder="Senha" maxlength="16" />
             </mat-form-field>
         </form>
         <div class="example-button-row">
-            <button mat-flat-button color="primary">Depositar</button>
+            <button mat-flat-button color="primary" (click)="doDeposit()">Depositar</button>
             <button mat-flat-button color="warn" (click)="voltaDetalhes()">Cancelar</button>
         </div>
     </div>
