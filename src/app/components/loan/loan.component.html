@@ -9,16 +9,13 @@
             <mat-divider></mat-divider>
             <mat-list-item>Valor Disponível: R$ {{user?.account.loanLimit}}</mat-list-item>
             <mat-divider></mat-divider>
-
-            <form class="example-form">
-                <mat-form-field class="example-full-width">
-                    <input type="text" class="inputcenter" mask="comma_separator.2" matInput
-                        placeholder="Novo Emprestimo">
+            <form class="example-form">                            
+                <mat-form-field class="example-full-width">                                
+                    <input type="text"  [formControl]="value" class="inputcenter" mask="comma_separator.2" matInput placeholder="Novo Emprestimo">
                 </mat-form-field>
-            
                 <div class="center">
                     <div class="example-button-row">
-                        <button mat-flat-button color="primary">Emprestar</button>
+                        <button mat-flat-button color="primary" (click)="doLoan(value)">Emprestar</button>
                     </div>
                     <div class="example-button-row">
                         <button mat-flat-button color="primary" (click)="cancelar()">Cancelar</button>

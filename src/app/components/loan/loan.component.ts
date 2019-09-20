@@ -23,12 +23,18 @@ export class LoanComponent implements OnInit {
   }
 
   doLoan(value: number) {
-    console.log(this.value);
-    console.log(value);
-    const loanRequest = this.formatLoan(value, this.user);
+    const loanRequest = this.formatLoan(this.value.value, this.user);
     this.accountService.doLoan(loanRequest).subscribe(r => {
-      console.log(r);
-      alert('emprestimo feito com sucesso!!!');
+      this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
+        if (response == null) {
+          alert('error');
+        } else {
+          console.log(response);
+          this.userservice.setterUser(response);
+          alert('emprestimo feito com sucesso!!!');
+          this.router.navigate(['index']);
+        }
+      });
     }, err => {
       console.log('Error: ' + err);
     });
@@ -43,7 +49,5 @@ export class LoanComponent implements OnInit {
     loanRequest.accountNumber = user.account.numberAccount;
 
     return loanRequest;
-
   }
-
 }
