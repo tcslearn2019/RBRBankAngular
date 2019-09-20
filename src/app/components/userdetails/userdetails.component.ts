@@ -20,4 +20,8 @@ export class UserdetailsComponent implements OnInit {
     console.log('clique');
     this.router.navigate(['index']);
   }
+  deposito() {
+    console.log('clique');
+    this.router.navigate(['deposit']);
+  }
 }
