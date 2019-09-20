@@ -1,8 +1,4 @@
 .titulo{
-<<<<<<< HEAD
-    text-align:center;
-  }
-=======
   text-align:center;
 }
 
@@ -28,7 +24,6 @@
   display: inline;
   margin-left: 4.4%;
 }
->>>>>>> 246276e2e17b4b64a0d63f17a23ffe257934497d
 
 .example-full-width{
   width: 100%;

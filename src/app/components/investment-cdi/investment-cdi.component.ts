@@ -15,7 +15,6 @@ import { User } from 'src/app/models/users/user';
   styleUrls: ['./investment-cdi.component.css']
 })
 export class InvestmentCdiComponent implements OnInit {
-<<<<<<< HEAD
   user: User;
   value = new FormControl();
   minimunValue: number = 1000;
@@ -23,10 +22,6 @@ export class InvestmentCdiComponent implements OnInit {
 
 
   constructor(private userService: UserService, private investmentService: InvestmentService) { }
-=======
-  user:User;
-  constructor() { }
->>>>>>> 246276e2e17b4b64a0d63f17a23ffe257934497d
 
   ngOnInit() {
     this.user = this.userService.getterUser();
