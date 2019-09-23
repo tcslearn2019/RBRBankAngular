@@ -50,6 +50,7 @@ const appRoutes: Routes = [
   { path: 'investment-ipca', component: InvestmentIpcaComponent},
   { path: 'rodape', component: RodapeComponent},
   { path: 'politics', component: PoliticsComponent},
+  { path: 'devs', component: DevsComponent}
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -57,6 +58,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { PoliticsComponent } from './components/politics/politics.component';
 import { ToolbarsegundaComponent } from './components/toolbarsegunda/toolbarsegunda.component';
+import { DevsComponent } from './components/devs/devs.component';
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
@@ -79,6 +81,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     RodapeComponent,
     PoliticsComponent,
     ToolbarsegundaComponent,
+    DevsComponent,
   ],
   imports: [
     BrowserModule,
