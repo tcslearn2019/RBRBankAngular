@@ -34,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent },
@@ -47,12 +48,15 @@ const appRoutes: Routes = [
   { path: 'investment-savings', component: InvestmentSavingsComponent},
   { path: 'investment-cdi', component: InvestmentCdiComponent},
   { path: 'investment-ipca', component: InvestmentIpcaComponent},
-  { path: 'rodape', component: RodapeComponent}
+  { path: 'rodape', component: RodapeComponent},
+  { path: 'politics', component: PoliticsComponent},
 ];
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RodapeComponent } from './components/rodape/rodape.component';
+import { PoliticsComponent } from './components/politics/politics.component';
+import { ToolbarsegundaComponent } from './components/toolbarsegunda/toolbarsegunda.component';
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
@@ -73,6 +77,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     InvestmentCdiComponent,
     InvestmentIpcaComponent,
     RodapeComponent,
+    PoliticsComponent,
+    ToolbarsegundaComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +110,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatRadioModule,
     MatSelectModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatGridListModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

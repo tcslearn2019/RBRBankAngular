@@ -1,0 +1,53 @@
+h1{
+    text-align:center;
+}
+.texto{
+    text-align:left;    
+}
+p{
+    vertical-align: top;
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;
+    text-indent: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;    
+}
+h1{
+    vertical-align: top;
+    font-size: 40px;
+    font-family: Verdana; 
+    word-spacing: 5px;    
+    letter-spacing: 1px;
+    text-indent: 50px;
+    padding-left: 1%;
+    text-align: center; 
+    color: green;
+}
+h2{
+    vertical-align: top;
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;
+    text-indent: 50px;
+    padding-left: 1%;
+    text-align: justify;
+    color: green;
+}
+.ps{
+    vertical-align: top;
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;
+    text-indent: 7px;
+    padding-left: 6%;   
+    text-align: justify;
+    margin-top: -1%;
+}

@@ -11,4 +11,5 @@ export class RodapeComponent implements OnInit {
 
   ngOnInit() {
   }
+  panelOpenState = false;
 }
