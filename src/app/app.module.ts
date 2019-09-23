@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { UserService } from './services/users/user.service';
 
 import { AppComponent } from './app.component';
@@ -9,14 +10,17 @@ import { InvestmentComponent } from './components/investment/investment.componen
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IndexComponent } from './components/index/index.component';
-import { FormsModule } from '@angular/forms';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
 import { DepositComponent } from './components/deposit/deposit.component';
 import { InvestmentCdiComponent } from './components/investment-cdi/investment-cdi.component';
 import { InvestmentIpcaComponent } from './components/investment-ipca/investment-ipca.component';
+import { RodapeComponent } from './components/rodape/rodape.component';
 
+import { FormsModule } from '@angular/forms';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -49,10 +53,6 @@ const appRoutes: Routes = [
   { path: 'investment-ipca', component: InvestmentIpcaComponent},
   { path: 'rodape', component: RodapeComponent}
 ];
-
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RodapeComponent } from './components/rodape/rodape.component';
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};

@@ -63,6 +63,7 @@ export class UserRegistrationComponent implements OnInit {
       } else {
         console.log('ta certo');
         this.userservice.setterUser(r.user);
+        localStorage.setItem('access_token', r.token);
         this.router.navigate(['index']);
       }
     },
