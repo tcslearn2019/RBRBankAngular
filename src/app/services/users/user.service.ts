@@ -24,7 +24,7 @@ export class UserService {
   getLogin(user: User): Observable<any> {
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(this.baseUrl + '/login', JSON.stringify(user), {headers: this.headers});
+    return this.http.post('http://localhost:8080/authenticate', JSON.stringify(user), {headers: this.headers});
   }
 
   getRegistration(user: User): Observable<any> {
@@ -36,9 +36,6 @@ export class UserService {
 
   setterUser(user: User) {
     this.user = user;
-    const nomes = this.user.name.split(' ');
-    this.user.firstName = nomes[0] + ' ' +  nomes[1].trim();
-    this.user.lastName = nomes.slice(2, nomes.length).join(' ').trim();
   }
 
   getterUser() {
