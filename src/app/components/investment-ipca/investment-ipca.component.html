@@ -16,9 +16,10 @@
                 <input type="text" class="inputcenter" [formControl]="value" mask="comma_separator.2" matInput placeholder="Valor que deseja aplicar">
             </mat-form-field> 
         </form>                   
-      <div class="example-button-row">
-        <button mat-flat-button color="primary" (click)="createInvestmentIPCA()">Aplicar</button>          
-      </div>          
+        <div class="example-button-row space-between-row example-full-width">
+            <button mat-flat-button color="primary" (click)="createInvestmentIPCA()">Aplicar</button>
+            <button mat-flat-button color="warn" (click)="voltarInvestimento()">Cancelar</button>
+          </div>          
     </div>    
   </mat-list>
 </body>

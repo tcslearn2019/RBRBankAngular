@@ -41,7 +41,10 @@ export class InvestmentSavingsComponent implements OnInit {
     });
   }
 
-  voltardetalhes() { }
+  voltardetalhes() {
+    console.log('clique');
+    this.router.navigate(['investment'])
+  }
 
   formatInvestiment(value: number, user: User, investmentName: string, minimunValue: number ): InvestmentRequest {
     const investmentRequest = new InvestmentRequest();
@@ -52,5 +55,4 @@ export class InvestmentSavingsComponent implements OnInit {
 
     return investmentRequest;
   }
-
 }

@@ -23,6 +23,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
+  public customPatterns = {'0': { pattern: new RegExp('\[a-zA-Z \]')}};
   user = new FormGroup({
     cpf: new FormControl(),
     password: new FormControl('', [
@@ -53,7 +54,6 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
-
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);

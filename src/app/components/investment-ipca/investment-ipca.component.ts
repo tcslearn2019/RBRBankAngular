@@ -41,7 +41,10 @@ export class InvestmentIpcaComponent implements OnInit {
       console.log(err);
     });
   }
-
+  voltarInvestimento(){
+    console.log('clique');
+    this.router.navigate(['investment']);
+  }
   formatInvestiment(value: number, user: User, investmentName: string, minimunValue: number ): InvestmentRequest {
     const investmentRequest = new InvestmentRequest();
     investmentRequest.account = user.account;

@@ -60,9 +60,9 @@ body{
 .altoRed{
   color:red;
 }
-.medioCinza{
-  color: rgb(111, 111, 117);
+.medioOrange{
+  color: rgb(255, 114, 62);
 }
-.baixoBlue{
-  color: blue;
+.baixoGreen{
+  color: green;
 }

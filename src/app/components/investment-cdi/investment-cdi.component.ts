@@ -6,6 +6,7 @@ import { InvestmentService } from 'src/app/services/investments/investment.servi
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-investment-cdi',
   templateUrl: './investment-cdi.component.html',
@@ -43,6 +44,11 @@ export class InvestmentCdiComponent implements OnInit {
     });
   }
 
+  voltarInvestimento(){
+    console.log('clique');
+    this.router.navigate(['investment'])
+  }
+  
   formatInvestiment(value: number, user: User, investmentName: string, minimunValue: number ): InvestmentRequest {
     const investmentRequest = new InvestmentRequest();
     investmentRequest.account = user.account;

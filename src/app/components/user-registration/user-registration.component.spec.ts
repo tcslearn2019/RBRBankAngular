@@ -5,7 +5,7 @@ import { UserRegistrationComponent } from './user-registration.component';
 describe('UserRegistrationComponent', () => {
   let component: UserRegistrationComponent;
   let fixture: ComponentFixture<UserRegistrationComponent>;
-
+public customPatterns = { ' 0 ' : { pattern : new RegExp ( ' \ [ a-zA-Z \] ' ) } } ;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserRegistrationComponent ]

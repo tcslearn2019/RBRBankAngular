@@ -26,17 +26,16 @@
 
             <div class="example-button-row">
                 <button mat-flat-button (click)="getLogin(user)" color="primary">Acessar</button>
-            </div>
-            <p>Ainda não é cadastrado? <a href="#cadastrar">Cadastre-se</a></p>
+            </div>           
         </div>
     </mat-tab>
 
-    <mat-tab label="Cadastrar" id="cadastrar">
-        <div class="center">
-            <form class="example-form paddin-user" [formGroup]="userRegistration">
+    <mat-tab label="Cadastrar" id="123" routerLink="123">
+        <div class="center" id="cadastrar">
+            <form id="cadastrar" class="example-form paddin-user" [formGroup]="userRegistration">
                 <mat-form-field class="example-full-width">
-                    <input type="text" matInput placeholder="Nome Completo" id="name" name="name" formControlName="name"
-                        [errorStateMatcher]="matcher" type='text'/>
+                    <input type="text"  matInput placeholder="Nome Completo" id="name" name="name" formControlName="name"
+                        [errorStateMatcher]="matcher" [dropSpecialCharacters]="false" [patterns]="customPatterns" mask="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" />
                     <mat-error *ngIf="userRegistration.hasError('required')">
                         Digite seu nome!
                     </mat-error>
@@ -68,8 +67,9 @@
                 <hr>
             </form>
             <div class="example-button-row">                                    
-                <button mat-flat-button color="primary" (click)="getRegistration(userRegistration)">Cadastrar</button>      
+                <button mat-flat-button id="cadastrar" color="primary" (click)="getRegistration(userRegistration)">Cadastrar</button>      
             </div>          
         </div>
     </mat-tab>
 </mat-tab-group>
+<app-rodape></app-rodape>
