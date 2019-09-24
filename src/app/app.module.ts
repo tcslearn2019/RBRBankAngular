@@ -36,6 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/';
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent },
@@ -115,7 +117,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatDialogModule,
     MatTooltipModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

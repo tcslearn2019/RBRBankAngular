@@ -1,44 +1,13 @@
-.container{
+footer {
     background-color: #B11521;
-    justify-content: space-evenly;
-    position:absolute;
-    align-items: stretch;
-    bottom:0%;
-    width:100%;
-    height: 12%; 
-    overflow: hidden;
+    text-align: center;
 }
-.btn{
-    margin-top: -23%;
-    margin-left: 62%;
+
+a {
+    color: aliceblue;
 }
-.samuel{
-    margin-top: -1.5%;
-}
-.quemSomos{
-    color:green;
-    margin-top: -16%;
-}
-.politicaPriva{
-    color: green;
-    margin-top: -4%;
-}
-.logo{
-    margin-top: -5%;
-    margin-left: 40%;
-}
-.containerInfo{
-    margin-top: -1.5%;
-}
-.containerInfo2{
-    margin-top: -1.5%;
-}
-.containerInfo3{
-    margin-top: -1.5%;
-}
-.numberSamuel{
-    margin-top: -15%;
-}
-.emailSamuel{
-    margin-top: -9%;
+
+p {
+    display: inline;
+    text-align: center!important;
 }
