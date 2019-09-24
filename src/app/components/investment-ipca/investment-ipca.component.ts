@@ -33,6 +33,8 @@ export class InvestmentIpcaComponent implements OnInit {
         } else {
           console.log(response);
           this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
         }
@@ -41,7 +43,7 @@ export class InvestmentIpcaComponent implements OnInit {
       console.log(err);
     });
   }
-  voltarInvestimento(){
+  voltarInvestimento() {
     console.log('clique');
     this.router.navigate(['investment']);
   }

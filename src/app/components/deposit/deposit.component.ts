@@ -5,6 +5,7 @@ import { User } from '../../models/users/user';
 import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/users/user.service';
 import { DepositRequest } from 'src/app/request/deposit-request';
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-deposit',
@@ -13,12 +14,30 @@ import { DepositRequest } from 'src/app/request/deposit-request';
 })
 export class DepositComponent implements OnInit {
   user: User;
+  userSession: Session;
   value = new FormControl();
   password = new FormControl();
+
   constructor(private router: Router, private userservice: UserService, private accountService: AccountService) { }
 
   ngOnInit() {
-    this.user = this.userservice.getterUser();
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
+      if (r == null) {
+        console.log('ta vazio');
+        alert('Dados inválidos.');
+      } else {
+        console.log('ta certo');
+        console.log(r.user);
+        this.userservice.setterUser(r.user);
+        this.user = r.user;
+        const userSession = this.userservice.userSession(r.user);
+        localStorage.setItem('user', JSON.stringify(userSession));
+      }
+    }, err => {
+      console.log('erro');
+      console.log(err);
+    });
   }
 
   voltaDetalhes() {
@@ -27,7 +46,11 @@ export class DepositComponent implements OnInit {
   }
 
   doDeposit() {
+    console.log('entrei');
+    console.log(this.user);
     if (this.password.value === this.user.password) {
+      console.log('entrei');
+
       const depositFormated = this.formatDeposit(this.value.value, this.user);
       this.accountService.doDeposit(depositFormated).subscribe(r => {
         this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
@@ -36,6 +59,8 @@ export class DepositComponent implements OnInit {
           } else {
             console.log(response);
             this.userservice.setterUser(response);
+            const userSession = this.userservice.userSession(response.user);
+            localStorage.setItem('user', JSON.stringify(userSession));
             alert('Deposito feito com sucesso!!!');
             this.router.navigate(['index']);
           }

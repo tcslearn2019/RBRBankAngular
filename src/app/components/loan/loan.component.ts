@@ -5,6 +5,7 @@ import { LoanRequest } from 'src/app/request/loan-request';
 import { User } from 'src/app/models/users/user';
 import { UserService } from 'src/app/services/users/user.service';
 import { AccountService } from 'src/app/services/accounts/account.service';
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-loan',
@@ -13,6 +14,7 @@ import { AccountService } from 'src/app/services/accounts/account.service';
 })
 export class LoanComponent implements OnInit {
     user: User;
+    userSession: Session;
     value = new FormControl();
     valorEmprestado: number;
 
@@ -20,6 +22,7 @@ export class LoanComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
+    this.userSession = JSON.parse(localStorage.getItem('user'));
     this.valorEmprestado = (this.user.account.loanLimit - 5000);
   }
 
@@ -32,6 +35,8 @@ export class LoanComponent implements OnInit {
         } else {
           console.log(response);
           this.userservice.setterUser(response);
+          const userSession = this.userservice.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('emprestimo feito com sucesso!!!');
           this.router.navigate(['index']);
         }

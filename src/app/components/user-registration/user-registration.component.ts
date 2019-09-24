@@ -63,6 +63,8 @@ export class UserRegistrationComponent implements OnInit {
       } else {
         console.log('ta certo');
         this.userservice.setterUser(r.user);
+        const userSession = this.userservice.userSession(r.user);
+        localStorage.setItem('user', JSON.stringify(userSession));
         localStorage.setItem('access_token', r.token);
         this.router.navigate(['index']);
       }
