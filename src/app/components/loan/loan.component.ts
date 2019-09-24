@@ -20,6 +20,7 @@ export class LoanComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
+    console.log(this.user);
     this.valorEmprestado = (this.user.account.loanLimit - 5000);
   }
 
