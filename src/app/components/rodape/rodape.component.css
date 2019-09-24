@@ -3,11 +3,15 @@ footer {
     text-align: center;
 }
 
+.center,
 a {
     color: aliceblue;
+    font-size: 92%;
 }
 
 p {
     display: inline;
     text-align: center!important;
+    color: aliceblue;
+    font-size: 75%;
 }
