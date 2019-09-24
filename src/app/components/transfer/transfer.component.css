@@ -19,7 +19,7 @@
   }
 
   .inputPad{
-      margin-top: 2%;
+      margin-top: 3%;
       margin-bottom: 1%;
       color: gray;
       align-content: flex-start !important;
@@ -43,6 +43,7 @@
     margin: auto;
     width: 200px;
     margin-bottom: 2%;
+    cursor: pointer;
   }
 .space-between-row {
   display: flex;
@@ -54,4 +55,10 @@
 .example-full-width {
     width: 100%;
     
-  } 
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

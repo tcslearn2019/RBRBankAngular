@@ -3,8 +3,8 @@
 <body class="tab">
     <div class="center">
         <div class="example-container" [formGroup]="transf">
-            <mat-list-item class="inputPad">Agencia: {{user?.account.bankBranch}} Conta: {{user?.account.numberAccount}}
-            </mat-list-item>
+            <mat-list-item style="align-content: center" class="inputPad"> Agencia: {{user?.account.bankBranch}} | Número da Conta:
+                {{user?.account.numberAccount}}</mat-list-item>
             <mat-divider class="margin-bottom-center"></mat-divider>
 
             <mat-form-field>
@@ -13,11 +13,11 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput formControlName="accountReciever" type="text"
+                <input matInput formControlName="accountReciever" type="number"
                     placeholder="Número da conta que receberá a transferência">
             </mat-form-field>
             <mat-form-field>
-                <input formControlName="password" type="password" matInput placeholder="Confime sua senha">
+                <input formControlName="password" type="password" matInput placeholder="Confirme sua senha">
             </mat-form-field>
         </div>
         <div class="example-button-row space-between-row example-full-width">

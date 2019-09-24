@@ -3,17 +3,18 @@
   <mat-list>    
     <div class="tab">
       <h1 class="titulo">Índice de Preços ao Consumidor Amplo</h1>
-      <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}}</mat-list-item>
+      <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}} | Número da Conta:
+        {{user?.account.numberAccount}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Número da Conta: {{user?.account.numberAccount}}</mat-list-item>
+      <mat-list-item>Taxa de rendimento: 10.12%</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Nome: {{user?.name}}</mat-list-item>
-      <mat-divider></mat-divider>    
-      <mat-list-item>Saldo: {{user?.account.balance}}</mat-list-item>
+      <mat-list-item>Aplicação mínima: R$30.00</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Seu saldo atual disponível: R${{user?.account.balance}}</mat-list-item>
       <mat-divider></mat-divider> 
       <form class="example-form">
             <mat-form-field class="example-full-width">
-                <input type="text" class="inputcenter" [formControl]="value" mask="comma_separator.2" matInput placeholder="Valor que deseja aplicar">
+                <input type="text" class="inputcenter" [formControl]="value" mask="comma_separator.2" matInput placeholder="Digite aqui o valor que deseja aplicar">
             </mat-form-field> 
         </form>                   
         <div class="example-button-row space-between-row example-full-width">
