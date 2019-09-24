@@ -45,3 +45,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 .mat-flat-button.mat-warn{
     background-color: #B11521;
 }
+.mat-tab-label{
+    height: 55px !important;
+}

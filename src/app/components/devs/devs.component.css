@@ -1,0 +1,65 @@
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-family: Verdana;
+    color: green;
+}
+.muda{
+    color: green;
+}
+.anderSon{
+    border: 1px solid #000;
+    border-radius: 100%;  
+}
+.anderson{
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow:  3px 2px 3px rgb(182, 26, 59);
+    margin-top: 9%;
+    margin-left: 2%;    
+}
+.texto1{
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;
+    text-indent: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify; 
+}
+.texto{
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;    
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    margin-top: 2%;   
+}
+h2{
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;
+    text-indent: 50px;
+    padding-left: 1%;
+    text-align: justify;
+    color: green;
+    margin-top:-1%;
+}
+.ps{
+    font-size: 20px;
+    font-family: Verdana; 
+    word-spacing: 5px;
+    text-justify: justify;
+    letter-spacing: 1px;
+    text-indent: 7px;
+    padding-left: 6%;   
+    text-align: justify;
+    margin-top: -1%;
+}
