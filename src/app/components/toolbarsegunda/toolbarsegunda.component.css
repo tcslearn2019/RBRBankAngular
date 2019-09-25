@@ -1,0 +1,24 @@
+.container {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center space-between;
+    align-items: center;  
+    background-color: #B11521;
+    color: white;
+}
+.comeco{
+    position: relative;
+}
+.logoTipo{
+    position: relative;      
+    padding: none;
+    height: 64px;      
+    width: 190px;
+    cursor: pointer;
+}
+  
+.pessoal{
+    height: 64px;
+    width:190px;
+}

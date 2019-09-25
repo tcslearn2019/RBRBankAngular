@@ -22,75 +22,85 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css']
 })
+
 export class UserRegistrationComponent implements OnInit {
+  public customPatterns = { '0': { pattern: new RegExp('\[a-zA-Z \]') } };
   user = new FormGroup({
-    cpf: new FormControl(),
+    cpf: new FormControl('',[
+      Validators.required,
+      Validators.maxLength(11),
+    ]),
+
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
       Validators.maxLength(16)
     ])
- });
+  });
 
- userRegistration = new FormGroup({
-  name: new FormControl('', [
-    Validators.required,
-    Validators.maxLength(55),
-    Validators.pattern(/^[a-zA-Z\s]*$/)
-  ]),
-  cpf: new FormControl(),
-  password: new FormControl('', [
-    Validators.required,
-    Validators.minLength(6),
-    Validators.maxLength(16)
-  ]),
-  birthDate: new FormControl(),
-  accountType: new FormControl()
-});
+  userRegistration = new FormGroup({
+    name: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(55),
+      Validators.pattern(/[a-zA-Z\s]/)
+    ]),
+    cpf: new FormControl('',[
+      Validators.required
+    ]),
+
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(16)
+    ]),
+    birthDate: new FormControl(),
+    accountType: new FormControl()
+  });
 
   matcher = new MyErrorStateMatcher();
   constructor(private location: Location, private userservice: UserService, private router: Router) { }
 
   ngOnInit() {
   }
-  
-  cadastrar() {
-    if(confirm("Deseja confirmar?")) {        
-      console.log('clique');      
-      location.reload() ;           
+
+  verificaErro(erro) {
+    if (/^([0-9]|\-|\+|\*|\/|\=|\[|\]|\?|\$|\"|\,|\.|\<|\>|\%|\#|\;|\@|\&|\¬|\¨|\!|\(|\)|\_|\:)/.test(erro.key)) {
+      erro.preventDefault();
     }
-    else{
-      this.router.navigate(['']);
-    }      
   }
 
-  openDialog(): void {    
-  }
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
-      console.log('r: ' + r);
+      //console.log('r: ' + r);
       if (r == null) {
-        console.log('ta vazio');
+        alert('Dados inválidos.');
       } else {
-        console.log('ta certo');
-        this.userservice.setterUser(r);
+        this.userservice.setterUser(r.user);
+        const userSession = this.userservice.userSession(r.user);
+        localStorage.setItem('user', JSON.stringify(userSession));
+        localStorage.setItem('access_token', r.token);
         this.router.navigate(['index']);
       }
     },
-    err => {
-      console.log(err);
-    });
+      err => {
+        console.log('Error: ' + err);
+      });
   }
 
   getRegistration(userRegistration){
     const userFormatado = this.formatUser(userRegistration.value);
     this.userservice.getRegistration(userFormatado).subscribe(r => {
       console.log(r);
+      if (r == null) {
+        alert('Usuario invalido');
+      } else {
+        alert('Usuario cadastrado com Sucesso');
+        location.reload();
+      }
     },
-    err => {
-      console.log('errs');
-      console.log(err);
-    });
+      err => {
+        console.log('Error: ' + err);
+      });
   }
 
   formatUser(userRegistration): User {

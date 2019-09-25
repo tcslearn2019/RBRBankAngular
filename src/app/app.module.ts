@@ -9,10 +9,20 @@ import { InvestmentComponent } from './components/investment/investment.componen
 import { LoanComponent } from './components/loan/loan.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IndexComponent } from './components/index/index.component';
-import { FormsModule } from '@angular/forms';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { InvestmentSavingsComponent } from './components/investment-savings/investment-savings.component';
+import { DepositComponent } from './components/deposit/deposit.component';
+import { InvestmentCdiComponent } from './components/investment-cdi/investment-cdi.component';
+import { InvestmentIpcaComponent } from './components/investment-ipca/investment-ipca.component';
+import { RodapeComponent } from './components/rodape/rodape.component';
+import { PoliticsComponent } from './components/politics/politics.component';
+import { ToolbarsegundaComponent } from './components/toolbarsegunda/toolbarsegunda.component';
+import { DevsComponent } from './components/devs/devs.component';
 
+import { FormsModule } from '@angular/forms';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -29,18 +39,27 @@ import {MatDividerModule} from '@angular/material/divider';
 import {HttpClientModule} from '@angular/common/http';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/';
 
 const appRoutes: Routes = [
-  { path: '', component: UserRegistrationComponent },  
+  { path: '', component: UserRegistrationComponent },
   { path: 'index', component: IndexComponent },
   { path: 'userdetails', component: UserdetailsComponent },
   { path: 'loan', component: LoanComponent },
   { path: 'investment', component: InvestmentComponent },
   { path: 'transfer', component: TransferComponent},
+  { path: 'deposit', component: DepositComponent},
+  { path: 'investment-savings', component: InvestmentSavingsComponent},
+  { path: 'investment-cdi', component: InvestmentCdiComponent},
+  { path: 'investment-ipca', component: InvestmentIpcaComponent},
+  { path: 'rodape', component: RodapeComponent},
+  { path: 'politics', component: PoliticsComponent},
+  { path: 'devs', component: DevsComponent}
 ];
-
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { ReactiveFormsModule } from '@angular/forms';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -55,6 +74,14 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     UserdetailsComponent,
     ToolbarComponent,
     LoanComponent,
+    DepositComponent,
+    InvestmentSavingsComponent,
+    InvestmentCdiComponent,
+    InvestmentIpcaComponent,
+    RodapeComponent,
+    PoliticsComponent,
+    ToolbarsegundaComponent,
+    DevsComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +112,12 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatListModule,
     MatRadioModule,
     MatSelectModule,
-    MatDialogModule 
+    MatDialogModule,
+    MatTooltipModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

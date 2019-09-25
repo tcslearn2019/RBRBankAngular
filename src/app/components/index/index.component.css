@@ -3,6 +3,9 @@
   align-items: baseline;
   align-self: baseline;
 }
+.mais{
+  margin-top: 2%;
+}
 .container {                 
     background-color: #B11521;  
   }
@@ -36,17 +39,17 @@
     border: 1px solid #000;
     border-radius: 3% 3%;
     margin-top: 1%;    
-    box-shadow: 3px 3px 5px green; 
+    box-shadow: 3px 3px 3px rgb(26, 139, 26); 
     display: inline-block;        
     position:relative;
     cursor: pointer;                        
   }  
 
   .example-card:hover, .example-card2:hover, .example-card3:hover, .example-card4:hover{
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
     transform: scale(0.9);
-    transition: 1s;
+    transition: 1.3s;
     cursor: pointer;
   }
   .cor{
@@ -57,7 +60,9 @@
       text-align: left;
       text-indent: -58px; 
     }
-
+  body{
+    border-right: 1px solid #000;    
+  }
   .cards {
     text-align:left;
   }

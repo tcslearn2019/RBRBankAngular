@@ -12,7 +12,7 @@ body{
   width: 38%;
   border: 1px solid #000;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px red;
+  box-shadow:  3px 2px 3px rgb(26, 139, 26);
   padding: 0px 50px;
   padding-bottom: 20px;
   background: white;  
@@ -21,7 +21,21 @@ body{
 .example-button-row button,
 .example-button-row {  
   align-content: center;
-  margin: auto;
-  margin-top: 10px;
-  width: 200px;
+  align-items: center;
+  text-align: center;
+  margin-top: 3%;
+  width: 40%;
+  display: inline;
+  margin-left: 2%;
 }
+.example-button-row button,
+.mat-flat-button.mat-warn,
+.example-button-row2 {  
+  align-content: center;
+  width:40%;
+  align-items: center;
+  text-align: center;
+  display: inline;
+  margin-left: 3.5%;
+}
+

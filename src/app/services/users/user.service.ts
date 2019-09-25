@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/models/users/user';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { TransferRequest } from 'src/app/request/transfer-request';
+import { Session } from 'src/app/request/session/session';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   private baseUrl: string = 'http://localhost:8080/rbr/user';
   user: User;
@@ -14,41 +15,47 @@ export class UserService {
   private headers: HttpHeaders;
   constructor(private http: HttpClient) { }
 
-  getUser(numberAccount: number) {
+  getUser(numberAccount: number): Observable<any> {
+    this.headers = new HttpHeaders();
+    const token = localStorage.getItem('access_token');
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8')
+                               .set('Authorization', 'Bearer ' + token);
     this.parans = new HttpParams();
     this.parans = this.parans.set('numberAccount', numberAccount.toString());
-    const param = {params: this.parans};
-    return this.http.get(this.baseUrl + '/cli', param);
+
+    return this.http.get(this.baseUrl + '/cli', {headers: this.headers, params: this.parans});
   }
 
   getLogin(user: User): Observable<any> {
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(this.baseUrl + '/login', JSON.stringify(user), {headers: this.headers});
+    return this.http.post('http://localhost:8080/authenticate', JSON.stringify(user), {headers: this.headers});
   }
 
   getRegistration(user: User): Observable<any> {
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    console.log(user);
     return this.http.post(this.baseUrl + '/reg', JSON.stringify(user), {headers: this.headers});
-  }
-
-  doTransfer(transfer: TransferRequest) {
-    this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(this.baseUrl + '/transfer', JSON.stringify(transfer), {headers: this.headers});
   }
 
   setterUser(user: User) {
     this.user = user;
-    const nomes = this.user.name.split(" ");
-    this.user.firstName = nomes[0] + " " +  nomes[1].trim();
-    this.user.lastName = nomes.slice(2, nomes.length).join(" ").trim();
+    const nomes = this.user.name.split(' ');
+    this.user.name = nomes[0];
   }
 
   getterUser() {
     return this.user;
+  }
+
+  userSession(user: User): Session {
+    const session = new Session();
+    session.name = user.name;
+    session.cpf = user.cpf;
+    session.numberAccount = user.account.numberAccount;
+    session.birthDate = user.birthDate;
+
+    return session;
   }
 
 }

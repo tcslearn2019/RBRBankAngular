@@ -1,0 +1,19 @@
+<mat-toolbar class="container">      
+    <div class=logoTipo>    
+        <img height="64px" src ="../../../assets/img/logobrancoo.png" (click)="sair()"/>    
+    </div>
+    <div class= "comeco">
+        <p>RBR | JUNTOS COM VOCE</p>
+    </div>
+    <div class="container pessoal">        
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="sair()">
+              <mat-icon>face</mat-icon>
+              <span>Logar</span>
+            </button>            
+        </mat-menu>
+    </div>
+</mat-toolbar>           
