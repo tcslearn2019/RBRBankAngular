@@ -34,7 +34,7 @@ export class LoanComponent implements OnInit {
           alert('error');
         } else {
           console.log(response);
-          this.userservice.setterUser(response);
+          this.userservice.setterUser(response.user);
           const userSession = this.userservice.userSession(response.user);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('emprestimo feito com sucesso!!!');
