@@ -45,7 +45,6 @@ doTransfer(transf) {
     const transfFormatado = this.formatTransfer(transf.value);
     this.accountService.doTransfer(transfFormatado).subscribe(r => {
       this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
-        debugger
         if (response == null) {
           alert('error');
         } else {

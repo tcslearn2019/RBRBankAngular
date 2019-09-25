@@ -15,7 +15,7 @@ import { Session } from 'src/app/request/session/session';
 export class InvestmentIpcaComponent implements OnInit {
   user: User;
   value = new FormControl();
-  minimunValue: number = 1000;
+  minimunValue: number = 30;
   investmentName: string = 'IPCA';
   userSession: Session;
 

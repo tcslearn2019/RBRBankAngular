@@ -16,7 +16,7 @@ import { Session } from 'src/app/request/session/session';
 export class InvestmentCdiComponent implements OnInit {
   user: User;
   value = new FormControl();
-  minimunValue: number = 1000;
+  minimunValue: number = 25;
   investmentName: string = 'CDI';
   userSession: Session;
 
@@ -55,7 +55,7 @@ export class InvestmentCdiComponent implements OnInit {
         } else {
           console.log(response);
           this.userService.setterUser(response);
-          const userSession = this.userService.userSession(response.user);
+          const userSession = this.userService.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
