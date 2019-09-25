@@ -27,6 +27,7 @@ export class ToolbarComponent implements OnInit {
   }
   sair() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('user');
     this.router.navigate(['']);
   }
 }

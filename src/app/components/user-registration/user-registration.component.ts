@@ -33,21 +33,21 @@ export class UserRegistrationComponent implements OnInit {
     ])
  });
 
- userRegistration = new FormGroup({
-  name: new FormControl('', [
-    Validators.required,
-    Validators.maxLength(55),
-    Validators.pattern(/^[a-zA-Z\s]*$/)
-  ]),
-  cpf: new FormControl(),
-  password: new FormControl('', [
-    Validators.required,
-    Validators.minLength(6),
-    Validators.maxLength(16)
-  ]),
-  birthDate: new FormControl(),
-  accountType: new FormControl()
-});
+  userRegistration = new FormGroup({
+    name: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(55),
+      Validators.pattern(/^[a-zA-Z\s]*$/)
+    ]),
+    cpf: new FormControl(),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(16)
+    ]),
+    birthDate: new FormControl(),
+    accountType: new FormControl()
+  });
 
   matcher = new MyErrorStateMatcher();
   constructor(private location: Location, private userservice: UserService, private router: Router) { }

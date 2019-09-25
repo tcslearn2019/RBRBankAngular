@@ -16,16 +16,20 @@ export class UserdetailsComponent implements OnInit {
 
 
   ngOnInit() {
+    debugger
     this.userSession = JSON.parse(localStorage.getItem('user'));
+    console.log('UserSession 2: ' + this.userSession.numberAccount);
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
+      debugger
+      console.log("retorno: " + r);
       if (r == null) {
         console.log('ta vazio');
         alert('Dados inválidos.');
       } else {
-        console.log('ta certo');
-        this.userservice.setterUser(r.user);
-        this.user = r.user;
-        const userSession = this.userservice.userSession(r.user);
+        console.log('ta certo a inicialização');
+        this.userservice.setterUser(r);
+        this.user = r;
+        const userSession = this.userservice.userSession(r);
         localStorage.setItem('user', JSON.stringify(userSession));
       }
     }, err => {
