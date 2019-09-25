@@ -13,7 +13,6 @@ export class ToolbarsegundaComponent implements OnInit {
   ngOnInit() {
   }
   sair(){
-    console.log('clique');
     this.router.navigate(['']);
   }
 }

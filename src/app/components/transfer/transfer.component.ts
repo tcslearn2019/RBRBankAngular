@@ -24,8 +24,7 @@ export class TransferComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
-    console.log(localStorage.getItem('user'));
-
+    //console.log(localStorage.getItem('user'));
   }
 
 doTransfer(transf) {
@@ -36,7 +35,7 @@ doTransfer(transf) {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userservice.setterUser(response);
           const userSession = this.userservice.userSession(response.user);
           localStorage.setItem('user', JSON.stringify(userSession));
@@ -45,9 +44,8 @@ doTransfer(transf) {
         }
       });
     },
-    err => {
-      console.log('errs');
-      console.log(err);
+    err => {      
+      console.log('Error: ' + err);
     });
   }
 }
