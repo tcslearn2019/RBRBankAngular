@@ -54,7 +54,7 @@ doTransfer(transf) {
         } else {
           console.log(response);
           this.userservice.setterUser(response);
-          const userSession = this.userservice.userSession(response.user);
+          const userSession = this.userservice.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Transferencia feito com sucesso!!!');
           this.router.navigate(['index']);

@@ -5,7 +5,7 @@ import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Session } from 'inspector';
+
 
 
 @Component({
@@ -15,7 +15,7 @@ import { Session } from 'inspector';
 })
 export class InvestmentCdiComponent implements OnInit {
   user: User;
-  userSession: Session;
+
 
   value = new FormControl();
   minimunValue: number = 1000;
@@ -25,7 +25,7 @@ export class InvestmentCdiComponent implements OnInit {
   constructor(private router: Router , private userService: UserService, private investmentService: InvestmentService) { }
 
   ngOnInit() {
-    this.userSession = JSON.parse(localStorage.getItem('user'));
+
     this.user = this.userService.getterUser();
   
   }
@@ -54,6 +54,7 @@ export class InvestmentCdiComponent implements OnInit {
   voltarInvestimento(){
     console.log('clique');
     this.router.navigate(['investment'])
+    this.router.navigate(['index']);
   }
   
   formatInvestiment(value: number, user: User, investmentName: string, minimunValue: number ): InvestmentRequest {
