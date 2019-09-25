@@ -16,7 +16,7 @@
       <form class="example-form">
         <mat-form-field class="example-full-width">
           <input type="text" class="inputcenter" mask="comma_separator.2" matInput
-            placeholder="Digite aqui o valor que deseja aplicar" prefix="R$">
+          [formControl]="value" placeholder="Digite aqui o valor que deseja aplicar" prefix="R$">
         </mat-form-field>
 
       </form>

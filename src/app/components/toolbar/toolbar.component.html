@@ -6,7 +6,7 @@
           <p>RBR | JUNTOS COM VOCE</p>
         </div>
         <div class="container pessoal">
-          <p>{{userSession.name}}</p>
+          <p>{{userSession?.name.split(' ')[0]}}</p>
           <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>
           </button>

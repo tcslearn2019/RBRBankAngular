@@ -5,6 +5,7 @@ import { InvestmentRequest } from 'src/app/request/investment-request';
 import { FormControl } from '@angular/forms';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { Router } from '@angular/router';
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-investment-savings',
@@ -16,11 +17,25 @@ export class InvestmentSavingsComponent implements OnInit {
   value = new FormControl();
   minimunValue: number = 0.05;
   investmentName: string = 'Poupanca';
+  userSession: Session;
 
   constructor(private router: Router, private userService: UserService, private investmentService: InvestmentService) { }
 
   ngOnInit() {
-    this.user = this.userService.getterUser();
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userService.getUser(this.userSession.numberAccount).subscribe(r => {
+     // console.log("retorno: " + r);
+      if (r == null) {
+        alert('Dados inválidos.');
+      } else {
+        this.userService.setterUser(r);
+        this.user = r;
+        const userSession = this.userService.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+      }
+    }, err => {
+      console.log('Error: ' + err);
+    });
   }
 
   createInvestmentSaving() {
@@ -32,7 +47,7 @@ export class InvestmentSavingsComponent implements OnInit {
         } else {
           //console.log(response);
           this.userService.setterUser(response);
-          const userSession = this.userService.userSession(response.user);
+          const userSession = this.userService.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
@@ -52,7 +67,7 @@ export class InvestmentSavingsComponent implements OnInit {
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = 4.52;
+    investmentRequest.minimumValue = minimunValue;
 
     return investmentRequest;
   }
