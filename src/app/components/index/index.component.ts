@@ -8,14 +8,14 @@ import { User } from 'src/app/models/users/user';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  user: User;
+  //user: User;
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   detalhesConta() {
-    console.log('clique');
+    console.log('clique dos detalhes');
     this.router.navigate(['userdetails']);
   }
   emprestimo() {

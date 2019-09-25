@@ -9,25 +9,25 @@ import { Router } from '@angular/router';
 export class InvestmentComponent implements OnInit {
   ativaPoupanca: boolean = false;
 
-  constructor(private router: Router){ }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  investimento(){
+  investimento() {
     console.log('clique');
     this.router.navigate(['index']);
   }
-  poupanca(){
+  poupanca() {
     console.log('clique');
     this.router.navigate(['investment-savings']);
   }
-  cdi(){
+  cdi() {
     console.log('clique');
     this.router.navigate(['investment-cdi']);
-  }  
-  ipca(){
+  }
+  ipca() {
     console.log('clique');
     this.router.navigate(['investment-ipca']);
   }
-} 
+}
 

@@ -32,6 +32,8 @@ export class InvestmentSavingsComponent implements OnInit {
         } else {
           console.log(response);
           this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
         }

@@ -15,7 +15,9 @@ export class InvestmentService {
 
   createInvestment(investmentRequest: InvestmentRequest) {
     this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    const token = localStorage.getItem('access_token');
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8')
+                               .set('Authorization', 'Bearer ' + token);
     return this.http.post(this.baseUrl + '/create', JSON.stringify(investmentRequest), {headers: this.headers});
   }
 

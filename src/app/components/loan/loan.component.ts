@@ -5,6 +5,7 @@ import { LoanRequest } from 'src/app/request/loan-request';
 import { User } from 'src/app/models/users/user';
 import { UserService } from 'src/app/services/users/user.service';
 import { AccountService } from 'src/app/services/accounts/account.service';
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-loan',
@@ -13,27 +14,45 @@ import { AccountService } from 'src/app/services/accounts/account.service';
 })
 export class LoanComponent implements OnInit {
     user: User;
+    userSession: Session;
     value = new FormControl();
     valorEmprestado: number;
 
   constructor(private router: Router, private userservice: UserService, private accountService: AccountService) { }
 
   ngOnInit() {
-    this.user = this.userservice.getterUser();
-    console.log(this.user);
-    this.valorEmprestado = (this.user.account.loanLimit - 5000);
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
+     // console.log("retorno: " + r);
+      if (r == null) {
+        console.log('ta vazio');
+        alert('Dados inválidos.');
+      } else {
+        console.log('ta certo a inicialização');
+        this.userservice.setterUser(r);
+        this.user = r;
+        const userSession = this.userservice.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+        this.valorEmprestado = (5000 - this.user.account.loanLimit);
+      }
+    }, err => {
+      console.log('erro');
+      console.log(err);
+    });
   }
 
   doLoan(value: number) {
     const loanRequest = this.formatLoan(this.value.value, this.user);
     this.accountService.doLoan(loanRequest).subscribe(r => {
-      this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
+      this.userservice.getUser(this.userSession.numberAccount).subscribe( response => {
         if (response == null) {
           alert('error');
         } else {
           console.log(response);
           this.userservice.setterUser(response);
-          alert('emprestimo feito com sucesso!!!');
+          const userSession = this.userservice.userSession(response);
+          localStorage.setItem('user', JSON.stringify(userSession)); 
+          alert('Emprestimo feito com sucesso!!!');
           this.router.navigate(['index']);
         }
       });

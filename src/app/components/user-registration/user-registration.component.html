@@ -10,15 +10,21 @@
         <div class="center">
             <form class="example-form paddin-user" [formGroup]="user">
                 <mat-form-field class="example-full-width">
-                    <input id="CPF" name="CPF" matInput placeholder="CPF" formControlName="cpf" mask='000.000.000-00' />
+                    <input id="CPF" name="CPF" matInput placeholder="CPF" formControlName="cpf" mask='000.000.000-00' [errorStateMatcher]="matcher" />
+                    <mat-error *ngIf="user.controls['cpf'].hasError('required')">
+                        Digite um CPF Válido!
+                    </mat-error>
+                    <mat-error *ngIf="user.controls['cpf'].hasError('maxLength')">
+                        Digite um CPF Válido!!!!!
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
                     <input id="password" name="password" type="password" matInput formControlName="password" placeholder="Senha" [errorStateMatcher]="matcher" maxlength="16" />
-                    <mat-error *ngIf="user.hasError('required')">
+                    <mat-error *ngIf="user.controls['password'].hasError('required')">
                         Senha Inválida!
                     </mat-error>
-                    <mat-error *ngIf="user.hasError('minlength')">
+                    <mat-error *ngIf="user.controls['password'].hasError('minlength')">
                         Sua senha deve conter pelo menos 6 dígitos!
                     </mat-error>
                 </mat-form-field>
@@ -35,10 +41,12 @@
         <div class="center" id="cadastrar">
             <form id="cadastrar" class="example-form paddin-user" [formGroup]="userRegistration">
                 <mat-form-field class="example-full-width">
-                    <input type="text" matInput placeholder="Nome Completo" id="name" name="name" formControlName="name" [errorStateMatcher]="matcher" [dropSpecialCharacters]="false" [patterns]="customPatterns" mask="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                    />
-                    <mat-error *ngIf="userRegistration.hasError('required')">
+                    <input type="text" (blur)="verificaErro(userRegistration)" (keydown)="verificaErro($event)" matInput placeholder="Nome Completo" id="name" name="name" formControlName="name" [errorStateMatcher]="matcher" />
+                    <mat-error *ngIf="userRegistration.controls['name'].hasError('required')">
                         Digite seu nome!
+                    </mat-error>
+                    <mat-error *ngIf="userRegistration.controls['name'].hasError('pattern')">
+                        Por favor digite seu nome sem acento ou caracteres especiais.
                     </mat-error>
                 </mat-form-field>
 
@@ -48,7 +56,7 @@
 
                 <mat-form-field class="example-full-width">
                     <input type="password" matInput placeholder="Senha" formControlName="password" [errorStateMatcher]="matcher" maxlength="16" />
-                    <mat-error *ngIf="userRegistration.hasError('required')">
+                    <mat-error *ngIf="userRegistration.controls['password'].hasError('required')">
                         Sua senha deve conter pelo menos 6 dígitos!
                     </mat-error>
                 </mat-form-field>

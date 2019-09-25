@@ -24,6 +24,8 @@ export class TransferComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
+    console.log(localStorage.getItem('user'));
+
   }
 
 doTransfer(transf) {
@@ -36,6 +38,8 @@ doTransfer(transf) {
         } else {
           console.log(response);
           this.userservice.setterUser(response);
+          const userSession = this.userservice.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('Transferencia feito com sucesso!!!');
           this.router.navigate(['index']);
         }
