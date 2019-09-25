@@ -23,10 +23,19 @@ body{
   align-content: center;
   align-items: center;
   text-align: center;
-  margin: auto;
-  margin-top: 10px;
-  width: 200px;
+  margin-top: 3%;
+  width: 40%;
   display: inline;
-  margin-left: 4.4%;
+  margin-left: 2%;
+}
+.example-button-row button,
+.mat-flat-button.mat-warn,
+.example-button-row2 {  
+  align-content: center;
+  width:40%;
+  align-items: center;
+  text-align: center;
+  display: inline;
+  margin-left: 3.5%;
 }
 
