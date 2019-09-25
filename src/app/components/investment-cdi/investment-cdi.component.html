@@ -10,14 +10,14 @@
       <mat-divider></mat-divider>
       <mat-list-item>Taxa de rendimento: 6.43%</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Aplicação mínima: R$20,00</mat-list-item>
+      <mat-list-item>Aplicação mínima: R$25,00</mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>Seu saldo atual disponível: R${{user?.account.balance}}</mat-list-item>
       <mat-divider></mat-divider>
       <form class="example-form">
         <mat-form-field class="example-full-width">
           <input type="text" class="inputcenter" mask="comma_separator.2" matInput
-            placeholder="Digite aqui o valor que deseja aplicar" prefix="R$">
+          [formControl]="value" placeholder="Digite aqui o valor que deseja aplicar" prefix="R$">
         </mat-form-field>
 
       </form>

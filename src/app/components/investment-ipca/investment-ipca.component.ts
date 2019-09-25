@@ -5,6 +5,7 @@ import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-investment-ipca',
@@ -14,14 +15,28 @@ import { Router } from '@angular/router';
 export class InvestmentIpcaComponent implements OnInit {
   user: User;
   value = new FormControl();
-  minimunValue: number = 1000;
+  minimunValue: number = 30;
   investmentName: string = 'IPCA';
+  userSession: Session;
 
 
   constructor(private router: Router, private userService: UserService, private investmentService: InvestmentService) { }
 
   ngOnInit() {
-    this.user = this.userService.getterUser();
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userService.getUser(this.userSession.numberAccount).subscribe(r => {
+     // console.log("retorno: " + r);
+      if (r == null) {
+        alert('Dados inválidos.');
+      } else {
+        this.userService.setterUser(r);
+        this.user = r;
+        const userSession = this.userService.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+      }
+    }, err => {
+      console.log('Error: ' + err);
+    });
   }
 
   createInvestmentIPCA() {
@@ -33,7 +48,7 @@ export class InvestmentIpcaComponent implements OnInit {
         } else {
           //console.log(response);
           this.userService.setterUser(response);
-          const userSession = this.userService.userSession(response.user);
+          const userSession = this.userService.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
@@ -43,15 +58,17 @@ export class InvestmentIpcaComponent implements OnInit {
       console.log(err);
     });
   }
+
   voltarInvestimento() {
     this.router.navigate(['investment']);
   }
+
   formatInvestiment(value: number, user: User, investmentName: string, minimunValue: number ): InvestmentRequest {
     const investmentRequest = new InvestmentRequest();
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = 10.12;
+    investmentRequest.minimumValue = minimunValue;
 
     return investmentRequest;
   }

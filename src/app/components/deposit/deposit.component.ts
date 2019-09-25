@@ -27,14 +27,13 @@ export class DepositComponent implements OnInit {
         alert('Dados inválidos.');
       } else {
         //console.log(r.user);
-        this.userservice.setterUser(r.user);
-        this.user = r.user;
-        const userSession = this.userservice.userSession(r.user);
+        this.userservice.setterUser(r);
+        this.user = r;
+        const userSession = this.userservice.userSession(r);
         localStorage.setItem('user', JSON.stringify(userSession));
       }
     }, err => {
-      console.log('erro');
-      console.log(err);
+      console.log('Error: ' + err);
     });
   }
 
@@ -53,7 +52,7 @@ export class DepositComponent implements OnInit {
           } else {
             //console.log(response);
             this.userservice.setterUser(response);
-            const userSession = this.userservice.userSession(response.user);
+            const userSession = this.userservice.userSession(response);
             localStorage.setItem('user', JSON.stringify(userSession));
             alert('Deposito feito com sucesso!!!');
             this.router.navigate(['index']);
