@@ -14,6 +14,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-transfer',
@@ -22,17 +23,18 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class TransferComponent implements OnInit {
   user: User;
+  userSession: Session;
 
   transf = new FormGroup({
-    accountReceiver: new FormControl('',[
+    accountReceiver: new FormControl('', [
       Validators.required,
       Validators.pattern(/^[0-9]*$/)
     ]),
-    value: new FormControl('',[
+    value: new FormControl('', [
       Validators.required,
       Validators.min(0.01)
     ]),
-    password: new FormControl('',[
+    password: new FormControl('', [
       Validators.required,
     ]),
   });
@@ -41,9 +43,24 @@ export class TransferComponent implements OnInit {
   constructor(private userservice: UserService, private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
-    this.user = this.userservice.getterUser();
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
+      // console.log("retorno: " + r);
+      if (r == null) {
+        console.log('ta vazio');
+        alert('Dados inválidos.');
+      } else {
+        console.log('ta certo a inicialização');
+        this.userservice.setterUser(r);
+        this.user = r;
+        const userSession = this.userservice.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+      }
+    }, err => {
+      console.log('erro');
+      console.log(err);
+    });
   }
-
   doTransfer(transf) {
     if (transf.value.password === this.user.password) {
       const transfFormatado = this.formatTransfer(transf.value);
@@ -52,16 +69,17 @@ export class TransferComponent implements OnInit {
           if (response == null) {
             alert('error');
           } else {
-            console.log(response);
+            //console.log(response);
             this.userservice.setterUser(response);
+            const userSession = this.userservice.userSession(response.user);
+            localStorage.setItem('user', JSON.stringify(userSession));
             alert('Transferencia feito com sucesso!!!');
             this.router.navigate(['index']);
           }
         });
       },
         err => {
-          console.log('errs');
-          console.log(err);
+          console.log('Error: ' + err);
         });
     }
   }
@@ -78,6 +96,4 @@ export class TransferComponent implements OnInit {
 
     return transfReq;
   }
-
-
 }

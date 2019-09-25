@@ -22,6 +22,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css']
 })
+
 export class UserRegistrationComponent implements OnInit {
   public customPatterns = { '0': { pattern: new RegExp('\[a-zA-Z \]') } };
   user = new FormGroup({
@@ -70,18 +71,19 @@ export class UserRegistrationComponent implements OnInit {
 
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
-      console.log('r: ' + r);
+      //console.log('r: ' + r);
       if (r == null) {
-        console.log('ta vazio');
         alert('Dados inválidos.');
       } else {
-        console.log('ta certo');
         this.userservice.setterUser(r.user);
+        const userSession = this.userservice.userSession(r.user);
+        localStorage.setItem('user', JSON.stringify(userSession));
+        localStorage.setItem('access_token', r.token);
         this.router.navigate(['index']);
       }
     },
       err => {
-        console.log(err);
+        console.log('Error: ' + err);
       });
   }
 
@@ -97,8 +99,7 @@ export class UserRegistrationComponent implements OnInit {
       }
     },
       err => {
-        console.log('errs');
-        console.log(err);
+        console.log('Error: ' + err);
       });
   }
 

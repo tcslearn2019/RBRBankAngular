@@ -30,8 +30,10 @@ export class InvestmentSavingsComponent implements OnInit {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
         }
@@ -42,7 +44,6 @@ export class InvestmentSavingsComponent implements OnInit {
   }
 
   voltardetalhes() {
-    console.log('clique');
     this.router.navigate(['investment'])
   }
 
@@ -51,7 +52,7 @@ export class InvestmentSavingsComponent implements OnInit {
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = minimunValue;
+    investmentRequest.minimumValue = 4.52;
 
     return investmentRequest;
   }

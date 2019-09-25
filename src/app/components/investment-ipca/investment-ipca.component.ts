@@ -31,8 +31,10 @@ export class InvestmentIpcaComponent implements OnInit {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
         }
@@ -41,8 +43,7 @@ export class InvestmentIpcaComponent implements OnInit {
       console.log(err);
     });
   }
-  voltarInvestimento(){
-    console.log('clique');
+  voltarInvestimento() {
     this.router.navigate(['investment']);
   }
   formatInvestiment(value: number, user: User, investmentName: string, minimunValue: number ): InvestmentRequest {
@@ -50,7 +51,7 @@ export class InvestmentIpcaComponent implements OnInit {
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = minimunValue;
+    investmentRequest.minimumValue = 10.12;
 
     return investmentRequest;
   }

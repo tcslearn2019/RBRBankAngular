@@ -5,6 +5,7 @@ import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Session } from 'inspector';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class InvestmentCdiComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getterUser();
+    
   }
 
   createInvestmentCDI() {
@@ -32,20 +34,21 @@ export class InvestmentCdiComponent implements OnInit {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response.user);
+          localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
         }
       });
-      console.log(r);
+      //console.log(r);
     }, err => {
       console.log(err);
     });
   }
 
   voltarInvestimento(){
-    console.log('clique');
     this.router.navigate(['investment'])
   }
   
@@ -54,7 +57,7 @@ export class InvestmentCdiComponent implements OnInit {
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = minimunValue;
+    investmentRequest.minimumValue = 6.43;
 
     return investmentRequest;
   }
