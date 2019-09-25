@@ -45,12 +45,13 @@ doTransfer(transf) {
     const transfFormatado = this.formatTransfer(transf.value);
     this.accountService.doTransfer(transfFormatado).subscribe(r => {
       this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
+        debugger
         if (response == null) {
           alert('error');
         } else {
           //console.log(response);
           this.userService.setterUser(response);
-          const userSession = this.userService.userSession(response.user);
+          const userSession = this.userService.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Transferencia feito com sucesso!!!');
           this.router.navigate(['index']);
