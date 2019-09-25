@@ -15,6 +15,8 @@ import { Session } from 'inspector';
 })
 export class InvestmentCdiComponent implements OnInit {
   user: User;
+  userSession: Session;
+
   value = new FormControl();
   minimunValue: number = 1000;
   investmentName: string = 'CDI';
@@ -23,8 +25,9 @@ export class InvestmentCdiComponent implements OnInit {
   constructor(private router: Router , private userService: UserService, private investmentService: InvestmentService) { }
 
   ngOnInit() {
+    this.userSession = JSON.parse(localStorage.getItem('user'));
     this.user = this.userService.getterUser();
-    
+  
   }
 
   createInvestmentCDI() {

@@ -37,7 +37,7 @@ export class TransferComponent implements OnInit {
         this.user = r;
         const userSession = this.userservice.userSession(r);
         localStorage.setItem('user', JSON.stringify(userSession));
-           }
+      }
     }, err => {
       console.log('erro');
       console.log(err);
