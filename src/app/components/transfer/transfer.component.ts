@@ -25,6 +25,7 @@ export class TransferComponent implements OnInit {
   constructor(private userservice: UserService, private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
+<<<<<<< HEAD
     this.userSession = JSON.parse(localStorage.getItem('user'));
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
      // console.log("retorno: " + r);
@@ -42,6 +43,10 @@ export class TransferComponent implements OnInit {
       console.log('erro');
       console.log(err);
     });
+=======
+    this.user = this.userservice.getterUser();
+    //console.log(localStorage.getItem('user'));
+>>>>>>> JWT
   }
 doTransfer(transf) {
 
@@ -52,7 +57,7 @@ doTransfer(transf) {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userservice.setterUser(response);
           const userSession = this.userservice.userSession(response.user);
           localStorage.setItem('user', JSON.stringify(userSession));
@@ -61,9 +66,8 @@ doTransfer(transf) {
         }
       });
     },
-    err => {
-      console.log('errs');
-      console.log(err);
+    err => {      
+      console.log('Error: ' + err);
     });
   }
 }

@@ -34,7 +34,7 @@ export class InvestmentCdiComponent implements OnInit {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userService.setterUser(response);
           const userSession = this.userService.userSession(response.user);
           localStorage.setItem('user', JSON.stringify(userSession));
@@ -42,14 +42,13 @@ export class InvestmentCdiComponent implements OnInit {
           this.router.navigate(['index']);
         }
       });
-      console.log(r);
+      //console.log(r);
     }, err => {
       console.log(err);
     });
   }
 
   voltarInvestimento(){
-    console.log('clique');
     this.router.navigate(['investment'])
   }
   
@@ -58,7 +57,7 @@ export class InvestmentCdiComponent implements OnInit {
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = minimunValue;
+    investmentRequest.minimumValue = 6.43;
 
     return investmentRequest;
   }
