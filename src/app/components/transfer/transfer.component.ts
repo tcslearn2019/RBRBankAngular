@@ -52,7 +52,7 @@ doTransfer(transf) {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userservice.setterUser(response);
           const userSession = this.userservice.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
@@ -61,9 +61,8 @@ doTransfer(transf) {
         }
       });
     },
-    err => {
-      console.log('errs');
-      console.log(err);
+    err => {      
+      console.log('Error: ' + err);
     });
   }
 }

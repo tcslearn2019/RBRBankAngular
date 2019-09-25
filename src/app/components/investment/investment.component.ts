@@ -14,19 +14,15 @@ export class InvestmentComponent implements OnInit {
   ngOnInit() {
   }
   investimento() {
-    console.log('clique');
     this.router.navigate(['index']);
   }
   poupanca() {
-    console.log('clique');
     this.router.navigate(['investment-savings']);
   }
   cdi() {
-    console.log('clique');
     this.router.navigate(['investment-cdi']);
   }
   ipca() {
-    console.log('clique');
     this.router.navigate(['investment-ipca']);
   }
 }

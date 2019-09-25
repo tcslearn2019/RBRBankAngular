@@ -3,9 +3,11 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/models/users/user';
 import { Observable, throwError } from 'rxjs';
 import { Session } from 'src/app/request/session/session';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   private baseUrl: string = 'http://localhost:8080/rbr/user';
   user: User;
