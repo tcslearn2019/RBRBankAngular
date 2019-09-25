@@ -1,8 +1,9 @@
 .containe {
-  display: flex; /* or inline-flex */
-  justify-content: center;
-  background-color: #B11521 ;
-  color: white;
+    display: flex;
+    /* or inline-flex */
+    justify-content: center;
+    background-color: #B11521;
+    color: white;
 }
 
 .example-form {
@@ -10,56 +11,57 @@
     margin: auto;
     min-width: 150px;
     max-width: 500px;
-    width: 100%;    
-  }
-
-  .example-full-width {   
     width: 100%;
-  }
-
-  h3{
-      text-align: center;
-      font-size: 2em;
-      padding-top: none;
-      position: inherit;
-  }
-
-  .paddin-user{
-    padding-top: 20px;
-  }
-  .center{
-    align-items: center;
-    text-align: center;
-  }
-
-  .example-button-row button,
-.example-button-row a {
-  margin-right: 8px;
-  width: 15%;
 }
 
-.logoTipo{
-  position: relative;      
-  padding: none;
-  height: 64px;      
-  width: 190px;
+.example-full-width {
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2em;
+    padding-top: none;
+    position: inherit;
+}
+
+.paddin-user {
+    padding-top: 20px;
+}
+
+.center {
+    align-items: center;
+    text-align: center;    
+  }
+
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+    width: 15%;
+}
+
+.logoTipo {
+    position: relative;
+    padding: none;
+    height: 64px;
+    width: 190px;
 }
 
 .example-radio-group {
-  display: flex;
-  flex-direction: row;
-  margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
 }
 
-.mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
 }
 
-#example-radio-group-label{
-  margin-right: 3%;
+#example-radio-group-label {
+    margin-right: 3%;
 }
 
-.tipoConta{
-  margin-bottom: 4%;
-  margin-top: 1.2%;
+.tipoConta {
+    margin-bottom: 4%;
+    margin-top: 1.2%;
 }

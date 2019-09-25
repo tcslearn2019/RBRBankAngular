@@ -23,23 +23,30 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  public customPatterns = {'0': { pattern: new RegExp('\[a-zA-Z \]')}};
+  public customPatterns = { '0': { pattern: new RegExp('\[a-zA-Z \]') } };
   user = new FormGroup({
-    cpf: new FormControl(),
+    cpf: new FormControl('',[
+      Validators.required,
+      Validators.maxLength(11),
+    ]),
+
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
       Validators.maxLength(16)
     ])
- });
+  });
 
   userRegistration = new FormGroup({
     name: new FormControl('', [
       Validators.required,
       Validators.maxLength(55),
-      Validators.pattern(/^[a-zA-Z\s]*$/)
+      Validators.pattern(/[a-zA-Z\s]/)
     ]),
-    cpf: new FormControl(),
+    cpf: new FormControl('',[
+      Validators.required
+    ]),
+
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
@@ -54,6 +61,13 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  verificaErro(erro) {
+    if (/^([0-9]|\-|\+|\*|\/|\=|\[|\]|\?|\$|\"|\,|\.|\<|\>|\%|\#|\;|\@|\&|\¬|\¨|\!|\(|\)|\_|\:)/.test(erro.key)) {
+      erro.preventDefault();
+    }
+  }
+
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
       console.log('r: ' + r);
@@ -69,9 +83,9 @@ export class UserRegistrationComponent implements OnInit {
         this.router.navigate(['index']);
       }
     },
-    err => {
-      console.log(err);
-    });
+      err => {
+        console.log(err);
+      });
   }
 
   getRegistration(userRegistration) {
@@ -85,10 +99,10 @@ export class UserRegistrationComponent implements OnInit {
         location.reload();
       }
     },
-    err => {
-      console.log('errs');
-      console.log(err);
-    });
+      err => {
+        console.log('errs');
+        console.log(err);
+      });
   }
 
   formatUser(userRegistration): User {

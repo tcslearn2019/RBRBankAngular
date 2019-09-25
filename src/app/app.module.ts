@@ -17,6 +17,9 @@ import { DepositComponent } from './components/deposit/deposit.component';
 import { InvestmentCdiComponent } from './components/investment-cdi/investment-cdi.component';
 import { InvestmentIpcaComponent } from './components/investment-ipca/investment-ipca.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
+import { PoliticsComponent } from './components/politics/politics.component';
+import { ToolbarsegundaComponent } from './components/toolbarsegunda/toolbarsegunda.component';
+import { DevsComponent } from './components/devs/devs.component';
 
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -38,7 +41,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/';
 
 const appRoutes: Routes = [
   { path: '', component: UserRegistrationComponent },
@@ -51,9 +57,10 @@ const appRoutes: Routes = [
   { path: 'investment-savings', component: InvestmentSavingsComponent},
   { path: 'investment-cdi', component: InvestmentCdiComponent},
   { path: 'investment-ipca', component: InvestmentIpcaComponent},
-  { path: 'rodape', component: RodapeComponent}
+  { path: 'rodape', component: RodapeComponent},
+  { path: 'politics', component: PoliticsComponent},
+  { path: 'devs', component: DevsComponent}
 ];
-
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -73,6 +80,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     InvestmentCdiComponent,
     InvestmentIpcaComponent,
     RodapeComponent,
+    PoliticsComponent,
+    ToolbarsegundaComponent,
+    DevsComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +114,11 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatRadioModule,
     MatSelectModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

@@ -22,7 +22,11 @@ export class LoanComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userservice.getterUser();
+<<<<<<< HEAD
     this.userSession = JSON.parse(localStorage.getItem('user'));
+=======
+    console.log(this.user);
+>>>>>>> master
     this.valorEmprestado = (this.user.account.loanLimit - 5000);
   }
 

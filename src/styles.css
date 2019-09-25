@@ -1,40 +1,53 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#EFE9E5; }
-
-.mat-tab-group.mat-primary .mat-ink-bar{
-    background-color: #B11521 ;
+html,
+body {
+    height: 100%;
 }
-.mat-flat-button.mat-primary{        
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #EFE9E5;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: #B11521;
+}
+
+.mat-flat-button.mat-primary {
     width: 71%;
-    background-color:green ;
+    background-color: green;
 }
 
-.mat-list-base .mat-list-item .mat-list-item-content{
+.mat-list-base .mat-list-item .mat-list-item-content {
     padding: 0 !important;
 }
 
-.mat-form-field.mat-focused .mat-form-field-ripple{
+.mat-form-field.mat-focused .mat-form-field-ripple {
     background-color: green !important;
 }
+
 .mat-form-field.mat-focused .mat-form-field-label {
     color: green !important;
 }
-.mat-card > :last-child:not(.mat-card-footer) {
+
+.mat-card> :last-child:not(.mat-card-footer) {
     margin-bottom: 0;
     margin-top: 9px;
     align-content: center;
     text-align: center;
 }
+
 .mat-list-base {
-    padding-top: 0px !important;    
+    padding-top: 0px !important;
 }
+
 .mat-card-actions {
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding: 0px !important;
 }
 
-.mat-radio-button.mat-accent .mat-radio-inner-circle{
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
     background-color: green;
 }
 
@@ -42,6 +55,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     border-color: green;
 }
 
-.mat-flat-button.mat-warn{
+.mat-flat-button.mat-warn {
     background-color: #B11521;
+}
+.mat-tab-label{
+    height: 55px !important;
+}
+app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+}
+
+app-root> :nth-child(2) {
+    flex: 1 0 auto;
 }
