@@ -24,11 +24,9 @@ export class DepositComponent implements OnInit {
     this.userSession = JSON.parse(localStorage.getItem('user'));
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
       if (r == null) {
-        console.log('ta vazio');
         alert('Dados inválidos.');
       } else {
-        console.log('ta certo');
-        console.log(r.user);
+        //console.log(r.user);
         this.userservice.setterUser(r.user);
         this.user = r.user;
         const userSession = this.userservice.userSession(r.user);
@@ -41,23 +39,19 @@ export class DepositComponent implements OnInit {
   }
 
   voltaDetalhes() {
-    console.log('clique');
     this.router.navigate(['userdetails']);
   }
 
   doDeposit() {
-    console.log('entrei');
     console.log(this.user);
     if (this.password.value === this.user.password) {
-      console.log('entrei');
-
       const depositFormated = this.formatDeposit(this.value.value, this.user);
       this.accountService.doDeposit(depositFormated).subscribe(r => {
         this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
           if (response == null) {
             alert('error');
           } else {
-            console.log(response);
+            //console.log(response);
             this.userservice.setterUser(response);
             const userSession = this.userservice.userSession(response.user);
             localStorage.setItem('user', JSON.stringify(userSession));

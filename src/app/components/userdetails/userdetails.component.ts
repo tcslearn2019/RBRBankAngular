@@ -20,28 +20,23 @@ export class UserdetailsComponent implements OnInit {
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
      // console.log("retorno: " + r);
       if (r == null) {
-        console.log('ta vazio');
         alert('Dados inválidos.');
       } else {
-        console.log('ta certo a inicialização');
         this.userservice.setterUser(r);
         this.user = r;
         const userSession = this.userservice.userSession(r);
         localStorage.setItem('user', JSON.stringify(userSession));
       }
     }, err => {
-      console.log('erro');
-      console.log(err);
+      console.log('Error: ' + err);
     });
   }
 
-
   voltardetalhes() {
-    console.log('clique');
     this.router.navigate(['index']);
   }
+
   deposito() {
-    console.log('clique');
     this.router.navigate(['deposit']);
   }
 }

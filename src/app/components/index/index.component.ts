@@ -15,20 +15,16 @@ export class IndexComponent implements OnInit {
   }
 
   detalhesConta() {
-    console.log('clique dos detalhes');
     this.router.navigate(['userdetails']);
   }
   emprestimo() {
-    console.log('clique');
     this.router.navigate(['loan']);
   }
 
   transferencia() {
-    console.log('clique');
     this.router.navigate(['transfer']);
   }
   investmento() {
-    console.log('clique');
     this.router.navigate(['investment']);
   }
 }

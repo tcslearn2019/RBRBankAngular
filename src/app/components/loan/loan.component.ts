@@ -25,10 +25,8 @@ export class LoanComponent implements OnInit {
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
      // console.log("retorno: " + r);
       if (r == null) {
-        console.log('ta vazio');
         alert('Dados inválidos.');
       } else {
-        console.log('ta certo a inicialização');
         this.userservice.setterUser(r);
         this.user = r;
         const userSession = this.userservice.userSession(r);
@@ -36,8 +34,7 @@ export class LoanComponent implements OnInit {
         this.valorEmprestado = (5000 - this.user.account.loanLimit);
       }
     }, err => {
-      console.log('erro');
-      console.log(err);
+      console.log('Error: ' + err);
     });
   }
 
@@ -48,7 +45,7 @@ export class LoanComponent implements OnInit {
         if (response == null) {
           alert('error');
         } else {
-          console.log(response);
+          //console.log(response);
           this.userservice.setterUser(response);
           const userSession = this.userservice.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession)); 
