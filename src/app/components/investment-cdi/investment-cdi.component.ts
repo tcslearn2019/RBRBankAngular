@@ -5,7 +5,6 @@ import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Session } from 'inspector';
 
 
 @Component({
