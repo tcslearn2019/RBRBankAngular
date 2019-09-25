@@ -18,7 +18,7 @@ export class UserdetailsComponent implements OnInit {
   ngOnInit() {
     this.userSession = JSON.parse(localStorage.getItem('user'));
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
-     // console.log("retorno: " + r);
+      //console.log("retorno: " + r);
       if (r == null) {
         alert('Dados inválidos.');
       } else {

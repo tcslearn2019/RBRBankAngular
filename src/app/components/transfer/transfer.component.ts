@@ -22,25 +22,21 @@ export class TransferComponent implements OnInit {
     password: new FormControl()
  });
 
-  constructor(private userservice: UserService, private accountService: AccountService, private router: Router) { }
+  constructor(private userService: UserService, private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
     this.userSession = JSON.parse(localStorage.getItem('user'));
-    this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
-     // console.log("retorno: " + r);
+    this.userService.getUser(this.userSession.numberAccount).subscribe(r => {
       if (r == null) {
-        console.log('ta vazio');
         alert('Dados inválidos.');
       } else {
-        console.log('ta certo a inicialização');
-        this.userservice.setterUser(r);
+        this.userService.setterUser(r);
         this.user = r;
-        const userSession = this.userservice.userSession(r);
+        const userSession = this.userService.userSession(r);
         localStorage.setItem('user', JSON.stringify(userSession));
-           }
+      }
     }, err => {
-      console.log('erro');
-      console.log(err);
+      console.log('Error: ' + err);
     });
   }
 doTransfer(transf) {
@@ -48,13 +44,13 @@ doTransfer(transf) {
   if (transf.value.password === this.user.password) {
     const transfFormatado = this.formatTransfer(transf.value);
     this.accountService.doTransfer(transfFormatado).subscribe(r => {
-      this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
+      this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
         if (response == null) {
           alert('error');
         } else {
           //console.log(response);
-          this.userservice.setterUser(response);
-          const userSession = this.userservice.userSession(response.user);
+          this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Transferencia feito com sucesso!!!');
           this.router.navigate(['index']);

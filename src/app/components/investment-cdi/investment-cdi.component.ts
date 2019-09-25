@@ -5,7 +5,7 @@ import { UserService } from 'src/app/services/users/user.service';
 import { InvestmentService } from 'src/app/services/investments/investment.service';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Session } from 'inspector';
+import { Session } from 'src/app/request/session/session';
 
 
 @Component({
@@ -16,27 +16,46 @@ import { Session } from 'inspector';
 export class InvestmentCdiComponent implements OnInit {
   user: User;
   value = new FormControl();
-  minimunValue: number = 1000;
+  minimunValue: number = 25;
   investmentName: string = 'CDI';
+  userSession: Session;
 
 
   constructor(private router: Router , private userService: UserService, private investmentService: InvestmentService) { }
 
   ngOnInit() {
-    this.user = this.userService.getterUser();
-    
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userService.getUser(this.userSession.numberAccount).subscribe(r => {
+     // console.log("retorno: " + r);
+      if (r == null) {
+        alert('Dados inválidos.');
+      } else {
+        this.userService.setterUser(r);
+        this.user = r;
+        const userSession = this.userService.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+      }
+    }, err => {
+      console.log('Error: ' + err);
+    });
   }
 
   createInvestmentCDI() {
+
+    console.log(this.value);
     const CDIFormated = this.formatInvestiment(this.value.value, this.user, this.investmentName, this.minimunValue);
+    console.log(CDIFormated);
+    console.log(this.value.value);
+    
+    
     this.investmentService.createInvestment(CDIFormated).subscribe(r => {
       this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
         if (response == null) {
           alert('error');
         } else {
-          //console.log(response);
+          console.log(response);
           this.userService.setterUser(response);
-          const userSession = this.userService.userSession(response.user);
+          const userSession = this.userService.userSession(response);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Investimento feito com sucesso!!!');
           this.router.navigate(['index']);
@@ -57,7 +76,7 @@ export class InvestmentCdiComponent implements OnInit {
     investmentRequest.account = user.account;
     investmentRequest.investmentName = investmentName;
     investmentRequest.value = value;
-    investmentRequest.minimumValue = 6.43;
+    investmentRequest.minimumValue = minimunValue;
 
     return investmentRequest;
   }
