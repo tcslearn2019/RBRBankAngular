@@ -16,12 +16,9 @@ export class UserdetailsComponent implements OnInit {
 
 
   ngOnInit() {
-    debugger
     this.userSession = JSON.parse(localStorage.getItem('user'));
-    console.log('UserSession 2: ' + this.userSession.numberAccount);
     this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
-      debugger
-      console.log("retorno: " + r);
+     // console.log("retorno: " + r);
       if (r == null) {
         console.log('ta vazio');
         alert('Dados inválidos.');

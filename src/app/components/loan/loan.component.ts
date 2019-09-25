@@ -21,27 +21,38 @@ export class LoanComponent implements OnInit {
   constructor(private router: Router, private userservice: UserService, private accountService: AccountService) { }
 
   ngOnInit() {
-    this.user = this.userservice.getterUser();
-<<<<<<< HEAD
     this.userSession = JSON.parse(localStorage.getItem('user'));
-=======
-    console.log(this.user);
->>>>>>> master
-    this.valorEmprestado = (this.user.account.loanLimit - 5000);
+    this.userservice.getUser(this.userSession.numberAccount).subscribe(r => {
+     // console.log("retorno: " + r);
+      if (r == null) {
+        console.log('ta vazio');
+        alert('Dados inválidos.');
+      } else {
+        console.log('ta certo a inicialização');
+        this.userservice.setterUser(r);
+        this.user = r;
+        const userSession = this.userservice.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+        this.valorEmprestado = (5000 - this.user.account.loanLimit);
+      }
+    }, err => {
+      console.log('erro');
+      console.log(err);
+    });
   }
 
   doLoan(value: number) {
     const loanRequest = this.formatLoan(this.value.value, this.user);
     this.accountService.doLoan(loanRequest).subscribe(r => {
-      this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
+      this.userservice.getUser(this.userSession.numberAccount).subscribe( response => {
         if (response == null) {
           alert('error');
         } else {
           console.log(response);
-          this.userservice.setterUser(response.user);
-          const userSession = this.userservice.userSession(response.user);
-          localStorage.setItem('user', JSON.stringify(userSession));
-          alert('emprestimo feito com sucesso!!!');
+          this.userservice.setterUser(response);
+          const userSession = this.userservice.userSession(response);
+          localStorage.setItem('user', JSON.stringify(userSession)); 
+          alert('Emprestimo feito com sucesso!!!');
           this.router.navigate(['index']);
         }
       });

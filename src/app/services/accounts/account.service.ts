@@ -18,19 +18,25 @@ export class AccountService {
 
   doLoan(loanRequest: LoanRequest) {
     this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    const token = localStorage.getItem('access_token');
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8')
+                               .set('Authorization', 'Bearer ' + token);
     return this.http.post(this.baseUrl + '/loan', JSON.stringify(loanRequest), {headers: this.headers});
   }
 
   doDeposit(depositRequest: DepositRequest) {
     this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    const token = localStorage.getItem('access_token');
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8')
+                               .set('Authorization', 'Bearer ' + token);
     return this.http.post(this.baseUrl + '/deposit', JSON.stringify(depositRequest), {headers: this.headers});
   }
 
   doTransfer(transfer: TransferRequest) {
     this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    const token = localStorage.getItem('access_token');
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8')
+                               .set('Authorization', 'Bearer ' + token);
     return this.http.post(this.baseUrl + '/transfer', JSON.stringify(transfer), {headers: this.headers});
   }
 
