@@ -5,6 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { TransferRequest } from 'src/app/request/transfer-request';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/services/accounts/account.service';
+import { Session } from 'src/app/request/session/session';
 
 @Component({
   selector: 'app-transfer',
@@ -19,25 +20,37 @@ export class TransferComponent implements OnInit {
     value: new FormControl(),
     password: new FormControl()
  });
+  userSession: Session;
 
-  constructor(private userservice: UserService, private accountService: AccountService, private router: Router) { }
+  constructor(private userService: UserService, private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
-    this.user = this.userservice.getterUser();
-    //console.log(localStorage.getItem('user'));
+    this.userSession = JSON.parse(localStorage.getItem('user'));
+    this.userService.getUser(this.userSession.numberAccount).subscribe(r => {
+      if (r == null) {
+        alert('Dados inválidos.');
+      } else {
+        this.userService.setterUser(r);
+        this.user = r;
+        const userSession = this.userService.userSession(r);
+        localStorage.setItem('user', JSON.stringify(userSession));
+      }
+    }, err => {
+      console.log('Error: ' + err);
+    });
   }
 
 doTransfer(transf) {
   if (transf.value.password === this.user.password) {
     const transfFormatado = this.formatTransfer(transf.value);
     this.accountService.doTransfer(transfFormatado).subscribe(r => {
-      this.userservice.getUser(this.user.account.numberAccount).subscribe( response => {
+      this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
         if (response == null) {
           alert('error');
         } else {
           //console.log(response);
-          this.userservice.setterUser(response);
-          const userSession = this.userservice.userSession(response.user);
+          this.userService.setterUser(response);
+          const userSession = this.userService.userSession(response.user);
           localStorage.setItem('user', JSON.stringify(userSession));
           alert('Transferencia feito com sucesso!!!');
           this.router.navigate(['index']);
