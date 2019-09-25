@@ -3,21 +3,31 @@
 <body class="tab">
     <div class="center">
         <div class="example-container" [formGroup]="transf">
-            <mat-list-item style="align-content: center" class="inputPad"> Agencia: {{user?.account.bankBranch}} | Número da Conta:
-                {{user?.account.numberAccount}}</mat-list-item>
+            <mat-list-item style="align-content: center" class="inputPad"> Agencia: {{user?.account.bankBranch}} | Número da Conta: {{user?.account.numberAccount}}
+            </mat-list-item>
             <mat-divider class="margin-bottom-center"></mat-divider>
 
             <mat-form-field>
-                <input matInput type="text" formControlName="value" placeholder="Valor a ser transferido"
-                    mask="comma_separator.2" prefix="R$">
+                <input matInput type="text" formControlName="value" [errorStateMatcher]="matcher" placeholder="Valor a ser transferido" mask="comma_separator.2" prefix="R$">
+                <mat-error *ngIf="transf.controls['value'].hasError('required')">
+                    O valor mínimo para transferência é de R$0.01
+                </mat-error>
+                <mat-error *ngIf="transf.controls['value'].hasError('min')">
+                    O valor mínimo para transferência é de R$0.01
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput formControlName="accountReciever" type="number"
-                    placeholder="Número da conta que receberá a transferência">
+                <input matInput formControlName="accountReceiver" [errorStateMatcher]="matcher" type="text" placeholder="Número da conta que receberá a transferência">
+                <mat-error *ngIf="transf.controls['accountReceiver'].hasError('required')">
+                    O número da conta não pode ser vazio
+                </mat-error>
             </mat-form-field>
             <mat-form-field>
-                <input formControlName="password" type="password" matInput placeholder="Confirme sua senha">
+                <input formControlName="password" type="password" [errorStateMatcher]="matcher" matInput placeholder="Confirme sua senha" maxlength="16">
+                <mat-error *ngIf="transf.controls['password'].hasError('required')">
+                    Confirme sua senha
+                </mat-error>
             </mat-form-field>
         </div>
         <div class="example-button-row space-between-row example-full-width">
