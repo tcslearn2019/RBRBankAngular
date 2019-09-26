@@ -26,7 +26,7 @@ export class TransferComponent implements OnInit {
   userSession: Session;
 
   transf = new FormGroup({
-    accountReciever: new FormControl(),
+    accountReceiver: new FormControl(),
     value: new FormControl(),
     password: new FormControl()
  });
@@ -81,7 +81,8 @@ export class TransferComponent implements OnInit {
     transfReq.receiverId = transf.accountReceiver;
     transfReq.senderId = this.user.account.numberAccount;
     transfReq.value = transf.value;
-
+    console.log(transfReq);
+    
     return transfReq;
   }
 }
