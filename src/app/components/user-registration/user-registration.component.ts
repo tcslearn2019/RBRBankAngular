@@ -63,14 +63,14 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   verificaErro(erro) {
-    if (/^([0-9]|\-|\+|\*|\/|\=|\[|\]|\?|\$|\"|\,|\.|\<|\>|\%|\#|\;|\@|\&|\¬|\¨|\!|\(|\)|\_|\:|\{|\}|\`|\´|\^|\~|)/.test(erro.key)) {
+    if (/^([0-9]|\-|\+|\*|\/|\=|\[|\]|\?|\$|\"|\,|\.|\<|\>|\%|\#|\;|\@|\&|\¬|\¨|\!|\(|\)|\_|\:|\{|\}|\`|\´|\^|\~)/.test(erro.key)) {
       erro.preventDefault();
     }
   }
 
   getLogin(user) {
     this.userservice.getLogin(user.value).subscribe(r => {
-      //console.log('r: ' + r);
+      
       if (r == null) {
         alert('Dados inválidos.');
       } else {
@@ -83,6 +83,7 @@ export class UserRegistrationComponent implements OnInit {
     },
       err => {
         console.log('Error: ' + err);
+        alert('Dados inválidos.');
       });
   }
 
