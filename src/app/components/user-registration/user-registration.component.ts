@@ -63,7 +63,7 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   verificaErro(erro) {
-    if (/^([0-9]|\-|\+|\*|\/|\=|\[|\]|\?|\$|\"|\,|\.|\<|\>|\%|\#|\;|\@|\&|\¬|\¨|\!|\(|\)|\_|\:)/.test(erro.key)) {
+    if (/^([0-9]|\-|\+|\*|\/|\=|\[|\]|\?|\$|\"|\,|\.|\<|\>|\%|\#|\;|\@|\&|\¬|\¨|\!|\(|\)|\_|\:|\{|\}|\`|\´|\^|\~|)/.test(erro.key)) {
       erro.preventDefault();
     }
   }
