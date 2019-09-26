@@ -49,28 +49,28 @@ export class TransferComponent implements OnInit {
     });
   }
 
-doTransfer(transf) {
-  if (transf.value.password === this.user.password) {
-    const transfFormatado = this.formatTransfer(transf.value);
-    this.accountService.doTransfer(transfFormatado).subscribe(r => {
-      this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
-        if (response == null) {
-          alert('error');
-        } else {
-          //console.log(response);
-          this.userService.setterUser(response);
-          const userSession = this.userService.userSession(response);
-          localStorage.setItem('user', JSON.stringify(userSession));
-          alert('Transferencia feito com sucesso!!!');
-          this.router.navigate(['index']);
-        }
+  doTransfer(transf) {
+    if (transf.value.password === this.user.password) {
+      const transfFormatado = this.formatTransfer(transf.value);
+      this.accountService.doTransfer(transfFormatado).subscribe(r => {
+        this.userService.getUser(this.user.account.numberAccount).subscribe( response => {
+          if (response == null) {
+            alert('error');
+          } else {
+            //console.log(response);
+            this.userService.setterUser(response);
+            const userSession = this.userService.userSession(response);
+            localStorage.setItem('user', JSON.stringify(userSession));
+            alert('Transferencia feito com sucesso!!!');
+            this.router.navigate(['index']);
+          }
+        });
+      },
+      err => {      
+        console.log('Error: ' + err);
       });
-    },
-    err => {      
-      console.log('Error: ' + err);
-    });
+    }
   }
-}
   
   cancelar() {
     this.router.navigate(['index']);
