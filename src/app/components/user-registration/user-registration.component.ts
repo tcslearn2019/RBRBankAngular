@@ -23,8 +23,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./user-registration.component.css']
 })
 
-export class UserRegistrationComponent implements OnInit {
-  public customPatterns = { '0': { pattern: new RegExp('\[a-zA-Z \]') } };
+export class UserRegistrationComponent implements OnInit {  
   user = new FormGroup({
     cpf: new FormControl('',[
       Validators.required,
