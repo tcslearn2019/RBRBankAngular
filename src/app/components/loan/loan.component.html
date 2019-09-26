@@ -1,13 +1,14 @@
 <app-toolbar></app-toolbar>
 
 <body>
-    <mat-list>
+    <mat-list>        
         <div class="tab">
-            <mat-list-item>Valor Máximo de Emprestimo: R$ 5.000</mat-list-item>
+            <h1 class="titulo">Empréstimo</h1>
+            <mat-list-item><mat-icon class="example-tab-icon">attach_money</mat-icon>Valor Máximo de Emprestimo: R$ 5.000</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>Valor Emprestado: R$ {{valorEmprestado}}</mat-list-item>
+            <mat-list-item><mat-icon class="example-tab-icon">attach_money</mat-icon>Valor Emprestado: R$ {{valorEmprestado}}</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>Valor Disponível: R$ {{user?.account.loanLimit}}</mat-list-item>
+            <mat-list-item><mat-icon class="example-tab-icon">attach_money</mat-icon>Valor Disponível: R$ {{user?.account.loanLimit}}</mat-list-item>
             <mat-divider></mat-divider>
 
             <form class="example-form">

@@ -4,15 +4,14 @@
   <mat-list>
     <div class="tab">
       <h1 class="titulo">Certificado de Depósito Interbancário</h1>
-
-      <mat-list-item style="align-content: center"> Agencia: {{user?.account.bankBranch}} | Número da Conta:
-        {{user?.account.numberAccount}}</mat-list-item>
+      <mat-list-item style="align-content: center"><mat-icon class="example-tab-icon">account_balance</mat-icon> Agencia |  {{user?.account.bankBranch}} <mat-icon class="example-tab-icon"> credit_card</mat-icon>  Número da Conta:
+      {{user?.account.numberAccount}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Taxa de rendimento: 6.43%</mat-list-item>
+      <mat-list-item><mat-icon class="example-tab-icon">trending_up</mat-icon>Taxa de rendimento: 6.43%</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Aplicação mínima: R$25,00</mat-list-item>
+      <mat-list-item><mat-icon class="example-tab-icon">trending_down</mat-icon>Aplicação mínima: R$20,00</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Seu saldo atual disponível: R${{user?.account.balance}}</mat-list-item>
+      <mat-list-item><mat-icon class="example-tab-icon">trending_flat</mat-icon>Seu saldo atual disponível: R${{user?.account.balance}}</mat-list-item>
       <mat-divider></mat-divider>
       <form class="example-form">
         <mat-form-field class="example-full-width">

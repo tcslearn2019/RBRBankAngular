@@ -71,7 +71,7 @@ export class TransferComponent implements OnInit {
       });
     }
   }
-
+  
   cancelar() {
     this.router.navigate(['index']);
   }

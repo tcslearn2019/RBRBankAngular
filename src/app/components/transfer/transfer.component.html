@@ -2,9 +2,10 @@
 
 <body class="tab">
     <div class="center">
+        <h1 class="titulo">Transferência</h1>
         <div class="example-container" [formGroup]="transf">
-            <mat-list-item style="align-content: center" class="inputPad"> Agencia: {{user?.account.bankBranch}} | Número da Conta: {{user?.account.numberAccount}}
-            </mat-list-item>
+            <mat-list-item style="align-content: center" class="inputPad"><mat-icon class="example-tab-icon">account_balance</mat-icon> Agencia: {{user?.account.bankBranch}} | <mat-icon class="example-tab-icon">credit_card</mat-icon>Número da Conta:
+                {{user?.account.numberAccount}}</mat-list-item>
             <mat-divider class="margin-bottom-center"></mat-divider>
 
             <mat-form-field>
